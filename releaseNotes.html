@@ -19,10 +19,10 @@
   <meta name="description" content="Build your own public domain newspaper"></meta>
   <meta name="generator" content="Scroll v21.1.0"></meta>
   <meta property="og:title" content="Release Notes"></meta>
-  <meta property="og:description" content="Here's a list of the notable changes in Scroll and Scrolldown."></meta>
+  <meta property="og:description" content="July 7, 2021 — Here's a list of the notable changes in Scroll and Scrolldown."></meta>
   <meta property="og:image" content=""></meta>
   <meta name="twitter:card" content="summary_large_image"></meta>
-  <style>html,body,div,span,h1,h2,h3,h4,h5,h6,p,ol,ul,table {
+  <style>html,body,div,span,h1,h2,h3,h4,p,ol,ul,table {
   margin: 0;
   padding: 0;
   border: 0;
@@ -40,6 +40,10 @@ html {
   border-bottom: 1px solid rgb(204,204,204);
   text-align: center;
   padding-bottom: 8px;
+}
+.scrollNameComponent a {
+  text-decoration: none;
+  color: #000;
 }
 .scrollTopRightBarComponent {
   text-align: right;
@@ -70,7 +74,7 @@ html {
   text-decoration: none;
   color: rgba(204,204,204,.5);
 }
-.scrollPageComponent {
+.scrollIndexPageComponent,.scrollArticlePageComponent {
   column-count: auto;
   column-fill: balance;
   column-width: 35ch;
@@ -79,76 +83,6 @@ html {
   padding-left: 20px;
   padding-right: 20px;
   margin: auto;
-}
-.scrollPageComponent table {
-  table-layout: fixed;
-  margin: .5em 0;
-  overflow: hidden;
-  font-size: 80%;
-  width: 100%;
-  hyphens: none;
-  border: 1px solid rgba(224,224,224,.8);
-}
-.scrollPageComponent table td,.scrollPageComponent table th {
-  padding: 3px;
-  overflow: hidden;
-}
-.scrollPageComponent table th {
-  border-bottom: 2px solid rgba(0,0,0,.6);
-  text-align: left;
-}
-.scrollPageComponent table tr:nth-child(even) {
-  background: rgba(224,224,224,.6);
-}
-.scrollPageComponent ul,.scrollPageComponent ol {
-  text-align: left;
-  line-height: 1.4em;
-  padding-left: 1em;
-  margin-top: 0.4em;
-}
-.scrollPageComponent p {
-  text-indent: 1em;
-  margin-top: 0.4em;
-  line-height: 1.4em;
-}
-.scrollPageComponent p:first-of-type {
-  display: inline;
-}
-.scrollPageComponent .scrollCodeBlock,.scrollPageComponent blockquote {
-  break-inside: avoid;
-}
-.scrollPageComponent .scrollCodeBlock,.scrollPageComponent blockquote {
-  display: block;
-  margin: .5em 0;
-  padding: .5em;
-  background: rgba(204,204,204,.5);
-}
-.scrollPageComponent .scrollCodeBlock {
-  overflow: auto;
-  font-size: 80%;
-  hyphens: none;
-}
-.scrollPageComponent .scrollCodeBlock {
-  white-space: pre;
-  border-left: .5em solid rgba(204,204,204, .8);
-}
-.scrollPageComponent blockquote {
-  white-space: pre-line;
-  border-left: .5em solid rgba(204,204,204, .8);
-}
-.scrollPageComponent h1 {
-  font-size: 24px;
-  margin-bottom: .25em;
-}
-.scrollPageComponent h1 a {
-  text-decoration: none;
-  color: #000;
-}
-.scrollPageComponent h1,.scrollPageComponent h2,.scrollPageComponent h3,.scrollPageComponent h4,.scrollPageComponent h5,.scrollPageComponent h6 {
-  text-align: center;
-}
-.scrollPageComponent h2,.scrollPageComponent h3,.scrollPageComponent h4 {
-  margin: .2em;
 }
 .scrollArticlePageComponent {
   column-rule: none;
@@ -161,6 +95,11 @@ html {
   text-align: justify;
   margin-bottom: .5em;
 }
+.scrollTitleComponent {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: .25em;
+}
 .scrollTitleComponent a {
   text-decoration: none;
   color: #000;
@@ -168,12 +107,69 @@ html {
 .scrollArticleDateComponent {
   font-style: italic;
   font-size: 80%;
-  display: inline;
+}
+.scrollParagraphComponent {
+  text-indent: 1em;
+  margin-top: 0.4em;
+  line-height: 1.4em;
+}
+.scrollQuoteComponent {
+  break-inside: avoid;
+  display: block;
+  margin: .5em 0;
+  padding: .5em;
+  background: rgba(204,204,204,.5);
+  white-space: pre-line;
+  border-left: .5em solid rgba(204,204,204,.8);
+}
+.scrollQuestionComponent,.scrollSectionComponent,.scrollSubsectionComponent {
+  text-align: center;
+  margin: .2em;
+}
+.scrollCodeBlockComponent {
+  overflow: auto;
+  font-size: 80%;
+  hyphens: none;
+  white-space: pre;
+  border-left: .5em solid rgba(204,204,204,.8);
+  break-inside: avoid;
+  display: block;
+  margin: .5em 0;
+  padding: .5em;
+  background: rgba(204,204,204,.5);
+}
+.scrollTableComponent {
+  table-layout: fixed;
+  margin: .5em 0;
+  overflow: hidden;
+  font-size: 80%;
+  width: 100%;
+  hyphens: none;
+  border: 1px solid rgba(224,224,224,.8);
+}
+.scrollTableComponent td,.scrollTableComponent th {
+  padding: 3px;
+  overflow: hidden;
+}
+.scrollTableComponent th {
+  border-bottom: 2px solid rgba(0,0,0,.6);
+  text-align: left;
+}
+.scrollTableComponent tr:nth-child(even) {
+  background: rgba(224,224,224,.6);
+}
+.scrollUnorderedListComponent,.scrollOrderedListComponent {
+  text-align: left;
+  line-height: 1.4em;
+  padding-left: 1em;
+  margin-top: 0.4em;
 }
 .scrollArticleSourceLinkComponent {
   text-align: center;
   font-size: 80%;
   margin: 0;
+  margin-top: 0.4em;
+  line-height: 1.4em;
 }
 .scrollArticleSourceLinkComponent a {
   color: #000;
@@ -216,138 +212,138 @@ html {
      <a href="https://github.com/publicdomaincompany/scroll"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
 </div>
 </div>
-   <h2 class="scrollTitleComponent">
+   <h2 class="scrollNameComponent">
     <a href="index.html">📜 Scroll</a>
 </h2>
    <div>Build your own public domain newspaper</div>
 </div>
-  <div class="scrollPageComponent scrollArticlePageComponent" style=""><h1><a href="releaseNotes.html">Release Notes</a></h1>
+  <div class="scrollArticlePageComponent" style=""><h1 class="scrollTitleComponent"><a href="releaseNotes.html">Release Notes</a></h1>
 
 
-<p>Here's a list of the notable changes in Scroll and Scrolldown.</p>
+<p class="scrollParagraphComponent"><span class="scrollArticleDateComponent">July 7, 2021 — </span>Here's a list of the notable changes in Scroll and Scrolldown.</p>
 
-<h3>21.0.0 06-21-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">21.0.0 06-21-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 built in support for custom grammars!</li>
 <li>⚠️ internal nodejs API changes: Article is no longer exported and ScrollBuilder is now ScrollFolder</li>
 </ul>
 
-<h3>20.0.0 06-21-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">20.0.0 06-21-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 new question nodetype. Simply compiles to an h4 for now but more semantic this way.</li>
 <li>🎉 new section nodetype. Simply compiles to an h3 for now but more semantic this way.</li>
 <li>🎉 new subsection nodetype. Simply compiles to an h4 for now but more semantic this way.</li>
 <li>⚠️ title2-title6 have been removed. use question, section and subsection instead.</li>
 </ul>
 
-<h4>Why the new `question` nodes?</h4>
+<h4 class="scrollQuestionComponent">Why the new `question` nodes?</h4>
 
-<p>Question and answer structures are literally older than the Socratic Method. Such a common semantic pattern deserves it's own keywords.</p>
+<p class="scrollParagraphComponent">Question and answer structures are literally older than the Socratic Method. Such a common semantic pattern deserves it's own keywords.</p>
 
-<h4>How do I migrate from title# nodes?</h4>
+<h4 class="scrollQuestionComponent">How do I migrate from title# nodes?</h4>
 
-<p>The below regex may help.</p>
+<p class="scrollParagraphComponent">The below regex may help.</p>
 
-<code class="scrollCodeBlock">Find ^title\d (.+\?)
+<code class="scrollCodeBlockComponent">Find ^title\d (.+\?)
  ReplaceWith question $1
 Find ^title\d (.+)
  ReplaceWith section $1</code>
 
-<h3>19.3.1 06-20-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">19.3.1 06-20-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 show the version in footer</li>
 <li>🏥 fix title in single pages without a title</li>
 </ul>
 
-<h3>19.3.0 06-20-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">19.3.0 06-20-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🏥 fix bug where readme.scroll could be overwritten by init</li>
 </ul>
 
-<h3>19.2.0 06-17-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">19.2.0 06-17-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 improved styling for tables</li>
 </ul>
 
-<h3>19.1.0 06-17-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">19.1.0 06-17-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🏥 fix bug with http links</li>
 <li>🏥 simpler article padding and changed scroll title to h2 from h1</li>
 </ul>
 
-<h3>19.0.0 06-17-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">19.0.0 06-17-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 ability to override header and footer</li>
 </ul>
 
-<h3>18.4.0 06-17-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">18.4.0 06-17-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🏥 improved alignment of images</li>
 </ul>
 
-<h3>18.3.0 06-16-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">18.3.0 06-16-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 og meta tags for social media sharing</li>
 </ul>
 
-<h3>18.2.0 06-16-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">18.2.0 06-16-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🏥 title now links to "index.html". less magic and works much better locally</li>
 </ul>
 
-<h3>18.1.1 06-16-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">18.1.1 06-16-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🏥 fix regression where 2 columns on mobile were not downsizing to 1</li>
 </ul>
 
-<h3>18.1.0 06-16-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">18.1.0 06-16-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 short articles now are put into 1 or 2 columns </li>
 </ul>
 
-<h3>18.0.0 06-15-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">18.0.0 06-15-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 build is now ~46% faster</li>
 <li>🏥 refactored html generation in preparation for easier extending and theming</li>
 </ul>
 
-<h3>17.5.0 06-05-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">17.5.0 06-05-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🏥 fixed numerous bugs in importing RSS feeds and added examples</li>
 </ul>
 
-<h3>17.4.0 06-04-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">17.4.0 06-04-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 typography adjustments</li>
 <li>🏥 fixed overlapping social icons up top on mobile. just keep git link</li>
 </ul>
 
-<h3>17.3.0 06-03-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">17.3.0 06-03-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 images now link to the full size image</li>
 </ul>
 
-<h3>17.2.2 06-02-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">17.2.2 06-02-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🏥 fixed safari-only bug not painting overflowing code blocks on single pages</li>
 </ul>
 
-<h3>17.2.1 05-25-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">17.2.1 05-25-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🏥 fixed bug where sequential links were not getting parsed</li>
 </ul>
 
-<h3>17.2.0 05-25-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">17.2.0 05-25-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🏥 tables can now break on single pages for higher information density</li>
 </ul>
 
-<h3>17.1.0 05-25-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">17.1.0 05-25-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 pipeTable</li>
 </ul>
 
-<table><thead><tr><th>what</th>
+<table class="scrollTableComponent"><thead><tr><th>what</th>
 
 <th>why</th>
 </tr></thead>
@@ -355,137 +351,137 @@ Find ^title\d (.+)
 <td>Because it's awesome!</td>
 </tr></tbody></table>
 
-<h3>17.0.0 05-25-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">17.0.0 05-25-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 tabTable and commaTable</li>
 <li>⚠️ table is now spaceTable</li>
 <li>🏥 do not crash if an empty row in a table</li>
 </ul>
 
-<h3>16.2.0 05-24-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">16.2.0 05-24-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🏥 do not crash if an image is not found</li>
 </ul>
 
-<h3>16.1.0 05-24-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">16.1.0 05-24-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 building a site is now ~2.4x faster 🏎</li>
 </ul>
 
-<h3>16.0.0 05-22-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">16.0.0 05-22-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>⚠️ rename scrollSettings.map to scroll.settings</li>
 </ul>
 
-<h3>15.0.0 05-21-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">15.0.0 05-21-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 Scroll will detect and emit image sizes during build to reduce layout shifts.</li>
 </ul>
 
-<h3>14.3.0 05-21-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">14.3.0 05-21-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🏥 Scroll is now somewhat usable as an NPM module.</li>
 </ul>
 
-<h3>14.2.0 05-20-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">14.2.0 05-20-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🏥 added html head meta viewport tag for better mobile experience.</li>
 </ul>
 
-<h3>14.1.0 05-20-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">14.1.0 05-20-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🏥 added doctype tag</li>
 <li>🏥 added html head meta description tag</li>
 </ul>
 
-<h3>14.0.0 05-19-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">14.0.0 05-19-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>⚠️ removed links nodeType</li>
 <li>⚠️ fixed bug where sometimes permalinks were still using title and not filename</li>
 </ul>
 
-<h3>13.3.0 05-18-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">13.3.0 05-18-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 html and image node types</li>
 </ul>
 
-<p>To use an image node:</p>
+<p class="scrollParagraphComponent">To use an image node:</p>
 
-<code class="scrollCodeBlock">image foo.jpg</code>
+<code class="scrollCodeBlockComponent">image foo.jpg</code>
 
-<p>QuickParagraphs are now an error. When you want to drop in some HTML, do so with HTML node:</p>
+<p class="scrollParagraphComponent">QuickParagraphs are now an error. When you want to drop in some HTML, do so with HTML node:</p>
 
-<code class="scrollCodeBlock">html
+<code class="scrollCodeBlockComponent">html
  &lt;b>anything goes here&lt;/b></code>
 
-<h3>13.2.0 05-18-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">13.2.0 05-18-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 Added <code>scroll check</code> command</li>
 </ul>
 
-<h3>13.1.0 05-18-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">13.1.0 05-18-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 🔗links in lists as well as paragraphs</li>
 </ul>
 
-<h3>13.0.0 05-17-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">13.0.0 05-17-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 🔗links in paragraph nodes.</li>
 <li>🎉 skipIndexPage nodeType</li>
 </ul>
 
-<h4>How do I use the new single word links?</h4>
+<h4 class="scrollQuestionComponent">How do I use the new single word links?</h4>
 
-<p>For single word links in paragraph nodes only (for now) you can now do:</p>
+<p class="scrollParagraphComponent">For single word links in paragraph nodes only (for now) you can now do:</p>
 
-<code class="scrollCodeBlock">paragraph
+<code class="scrollCodeBlockComponent">paragraph
  This is a link🔗example.com</code>
 
-<p>Below is a regex for migrating existing <code>*.scroll</code> files.</p>
+<p class="scrollParagraphComponent">Below is a regex for migrating existing <code>*.scroll</code> files.</p>
 
-<code class="scrollCodeBlock">&lt;a href="https://([^"]+)">([^ ]+)&lt;/a>
+<code class="scrollCodeBlockComponent">&lt;a href="https://([^"]+)">([^ ]+)&lt;/a>
 $2🔗$1</code>
 
-<h4>How do I use the 🔗link tag with multiword links?</h4>
+<h4 class="scrollQuestionComponent">How do I use the 🔗link tag with multiword links?</h4>
 
-<p>The 🔗link tag only supports single word links. Like everything with Scrolldown, you have
+<p class="scrollParagraphComponent">The 🔗link tag only supports single word links. Like everything with Scrolldown, you have
 a number of options if the conventional design doesn't work for you. Your options are:</p>
 
-<ul>
+<ul class="scrollUnorderedListComponent">
 <li>Link just one word. If you need more, perhaps camelCase or snake_case your words together into one concept.</li>
 <li>Repeat the link twice <code>foo 🔗link bar 🔗link</code></li>
 <li>Use &lt;a> tags.</li>
 <li>Extend the Scrolldown grammar for your site.</li>
 </ul>
 
-<h4>Can I not include a page in the index page?</h4>
+<h4 class="scrollQuestionComponent">Can I not include a page in the index page?</h4>
 
-<p>Now you can! Sometimes you just want to publish an independent page without including it
+<p class="scrollParagraphComponent">Now you can! Sometimes you just want to publish an independent page without including it
 in the index. To do that, just add <code>skipIndexPage</code>.</p>
 
-<h3>12.1.0 05-14-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">12.1.0 05-14-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 chat nodeType</li>
 </ul>
 
 <div class="scrollDialogueComponent scrollDialogueComponentLeft"><span>You can now do dialogues</span></div><div class="scrollDialogueComponent scrollDialogueComponentRight"><span>Cool!</span></div>
 
-<h3>12.0.0 05-12-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">12.0.0 05-12-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>⚠️ scroll create is now scroll init</li>
 <li>⚠️ Removed export command</li>
 <li>🏥 removed example.com folder. Less code and now flat.</li>
 </ul>
 
-<h3>11.0.0 05-11-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">11.0.0 05-11-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 list, orderedList, and links node types</li>
 <li>🎉 codeWithLanguageNode</li>
 <li>🏥 HTML escaped in code blocks</li>
 </ul>
 
-<h3>10.0.0 05-10-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">10.0.0 05-10-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 table nodeType for SSVs with linkify</li>
 <li>🎉 Better docs in Scrolldown grammar</li>
 <li>⚠️ Removed list nodeType</li>
@@ -494,46 +490,46 @@ in the index. To do that, just add <code>skipIndexPage</code>.</p>
 <li>🏥 multiline support in subheader nodeTypes</li>
 <li></li>
 </ul>
-<h3>9.0.0 05-05-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">9.0.0 05-05-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 Scrolldown now has a quote nodeType.</li>
 <li>🏥 Code block format bug fixes.</li>
 <li>🏥 Styling improvements</li>
 </ul>
 
-<h3>8.0.0 04-10-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">8.0.0 04-10-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 Scroll now just builds files. No web server needed.</li>
 </ul>
 
-<h3>7.0.0 04-03-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">7.0.0 04-03-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>⚠️ Scroll the language is now called Scrolldown (thanks FB!).</li>
 <li>🏥 Bug fixes.</li>
 <li>🎉 Better perf.</li>
 </ul>
 
-<h3>6.0.0 03-08-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">6.0.0 03-08-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 By popular request, Scroll now also publishes each article to its own page.</li>
 <li>🎉 Fewer links. Do less. KISS.</li>
 <li>🎉 Better perf.</li>
 <li>🎉 "permalink" nodeType</li>
 </ul>
 
-<h3>5.0.0 02-28-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">5.0.0 02-28-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 Changed name of everything from dumbdown to Scroll per user feedback</li>
 <li>⚠️ File extension of articles needs to be "scroll" and not "dd" now.</li>
 </ul>
 
-<h3>4.2.0 02-22-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">4.2.0 02-22-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🏥 Fixed paragraph parsing and rendering</li>
 </ul>
 
-<h3>4.1.0 02-22-2021</h3>
-<ul>
+<h3 class="scrollSectionComponent">4.1.0 02-22-2021</h3>
+<ul class="scrollUnorderedListComponent">
 <li>🎉 "git" scrollSetting for article source links.</li>
 </ul>
 <p class="scrollArticleSourceLinkComponent"><a href="https://github.com/publicdomaincompany/scroll/blob/main/releaseNotes.scroll">Article source</a></p></div>
