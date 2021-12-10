@@ -8,7 +8,7 @@
  
  Generally you don't want to edit it by hand.
 
- Scroll v22.4.0
+ Scroll v23.0.0
 
 -->
 <html lang="en-US">
@@ -17,9 +17,9 @@
   <title>📜 Scroll: the extensible alternative to Markdown. - 📜 Scroll</title>
   <meta name="viewport" content="width=device-width,initial-scale=1"></meta>
   <meta name="description" content="The extensible alternative to Markdown"></meta>
-  <meta name="generator" content="Scroll v22.4.0"></meta>
+  <meta name="generator" content="Scroll v23.0.0"></meta>
   <meta property="og:title" content="📜 Scroll: the extensible alternative to Markdown."></meta>
-  <meta property="og:description" content="Scroll is different than other static site generators because it uses the easily extendible Scrolldown, so you can invent new languages to better fit your content."></meta>
+  <meta property="og:description" content="You can stick to the basics or easily define new keywords to better fit your content and workflows. A simple indent is all you need to include sublanguages. No complex encoding needed."></meta>
   <meta property="og:image" content="https://scroll.pub/screenshot.png"></meta>
   <meta name="twitter:card" content="summary_large_image"></meta>
   <style>html,body,div,span,h1,h2,h3,h4,p,ol,ul,table,figure {
@@ -234,15 +234,15 @@ html {
 
 <h4 class="scrollQuestionComponent">What makes Scroll different?</h4>
 
-<p class="scrollParagraphComponent">Scroll is different than <a href="https://staticsitegenerators.net">other</a> static site generators because it uses the easily extendible <strong>Scrolldown</strong>, so you can invent new languages to better fit your content.</p>
+<p class="scrollParagraphComponent">Scroll is different than <a href="https://staticsitegenerators.net">other static site generators</a> because it uses the easily extendible <b>Scrolldown</b>, so you can invent new languages to better fit your content.</p>
 
-<p class="scrollParagraphComponent">The basics of Scrolldown are even simpler than Markdown. For example, <b>the keyword for title is title</b>.</p>
+<p class="scrollParagraphComponent">The basics of Scrolldown are even simpler than Markdown. For example, <i>the keyword for title is title</i>.</p>
 
 <p class="scrollParagraphComponent">You can stick to the basics or easily define new keywords to better fit your content and workflows. A simple indent is all you need to include sublanguages. No complex encoding needed.</p>
 
 <h4 class="scrollQuestionComponent">How do I extend Scroll?</h4>
 
-<p class="scrollParagraphComponent">Imagine you run a cooking blog where you share recipes. It may be useful to present recipes to your readers in a specialized style. You could create a <i>recipe</i> keyword and write a post like this:</p>
+<p class="scrollParagraphComponent">Imagine you run a cooking blog where you share <i>recipe</i>s. It may be useful to present recipes to your readers in a specialized style. You could create a recipe keyword and write a post like this:</p>
 
 <code class="scrollCodeBlockComponent">title My Snowball Cookies
 
@@ -260,9 +260,9 @@ recipe
 
 <p class="scrollParagraphComponent">Your grammar extension might generate beautiful custom HTML for that recipe section and also perhaps allow users to vote on it, or include it in a CSV export, et cetera. Scrolldown let's you combine mini-languages in a simple and non-conflicting way. What you do with those languages is up to you.</p>
 
-<p class="scrollParagraphComponent">(Warning: the cookie recipe above has not been tested)</p>
+<p class="scrollParagraphComponent">(Warning: the cookies above have not been tasted)</p>
 
-<p class="scrollParagraphComponent">For a working example of extending Scroll check out this <a href="https://github.com/breck7/breckyunits.com/tree/main/markups">one</a> which adds node types for Markdown, Textile, and BBCode.</p>
+<p class="scrollParagraphComponent">For an extended example of extending Scroll check out this <a href="https://github.com/breck7/breckyunits.com/tree/main/markups">one</a> which adds node types for Markdown, Textile, and BBCode.</p>
 
 <h4 class="scrollQuestionComponent">What kind of sites can I use Scroll to build?</h4>
 
@@ -307,9 +307,8 @@ npm install -g .</code>
 
 <h4 class="scrollQuestionComponent">What does the name Scroll refer to?</h4>
 
-<p class="scrollParagraphComponent"><em>A scroll</em> is a single folder containing Scrolldown files and a `scroll.settings` file.
-Scroll compiles those Scrolldown files into a static
-index.html page.</p>
+<p class="scrollParagraphComponent"><i>A scroll</i> is a single folder containing Scrolldown files and an optional <code>scroll.settings</code> file.
+Scroll compiles those Scrolldown files into a static index.html page.</p>
 
 <p class="scrollParagraphComponent">Scroll is also the name of the command line app that includes a
 simple fs watch app for live preview.</p>
@@ -327,15 +326,12 @@ built by Scroll, looks like this:</p>
  anImageInTheArticle.png
  scroll.settings</code>
 
-<p class="scrollParagraphComponent">The `scroll.settings` file let's Scroll know that
-a folder contains a Scroll.</p>
-
-<p class="scrollParagraphComponent">When you "build" a Scroll site, you are simply generating
-the `index.html` and `[article].html` files in the site's folder.</p>
+<p class="scrollParagraphComponent">When you build a Scroll site, you are simply generating
+the <code>index.html</code> and <code>[article].html</code> files in the site's folder.</p>
 
 <p class="scrollParagraphComponent">With Scroll your site's Scroll files and static files and generated html
-are all in one public folder and checked into version control. Though often
-you may want to add `*.html` to your `.gitignore`.
+are all in one public folder and checked into version control. Usually you
+want to add <code>*.html</code> to your <code>.gitignore</code>.
 </p>
 <h4 class="scrollQuestionComponent">How do I save drafts?</h4>
 
@@ -343,15 +339,13 @@ you may want to add `*.html` to your `.gitignore`.
 
 <code class="scrollCodeBlockComponent">📁drafts
  someDraft.scroll
- scroll.settings
 📁yourDomainName.org
- publishedArticle.scroll
- scroll.settings</code>
+ publishedArticle.scroll</code>
 
 <h4 class="scrollQuestionComponent">What file formats does Scroll use?</h4>
 
 <p class="scrollParagraphComponent">Scroll articles are written as Scrolldown files with the file
-extension `scroll`. The grammar for Scrolldown is defined <a href="https://github.com/publicdomaincompany/scroll/blob/main/scrolldown.grammar">here</a>.</p>
+extension <code>scroll</code>. The current base grammar for Scrolldown is defined <a href="https://github.com/publicdomaincompany/scroll/blob/main/scrolldown.grammar">here</a>.</p>
 
 <h4 class="scrollQuestionComponent">What language is Scroll written in?</h4>
 
@@ -374,10 +368,7 @@ a single file tracked by git.</p>
 
 <h4 class="scrollQuestionComponent">Why does the default theme have a single page layout?</h4>
 
-<p class="scrollParagraphComponent">The default Scroll theme is designed to make it easier for <strong>syntopic
-reading</strong>. Being able to scan the page like a
-newspaper. This allows you to read at a higher level—to "get in the author's head"—
-compared to reading one article at a time from beginning to end.</p>
+<p class="scrollParagraphComponent">The default Scroll theme is designed to make it easier for <b>syntopic reading</b>. Being able to scan the page like a newspaper. This allows you to read at a higher level—to "get in the author's head"—compared to reading one article at a time from beginning to end.</p>
 
 <p class="scrollParagraphComponent">And if anyone prefers to read a scroll in a different way—they can! Scroll is for
 public domain sites. People are free to arrange the symbols any way they wish.</p>
@@ -397,7 +388,7 @@ gives older articles, which are often more important, more visibility.</p>
 
 <h4 class="scrollQuestionComponent">Is there a place I can play with the Scrolldown grammar and see how it compiles to HTML?</h4>
 
-<p class="scrollParagraphComponent">Yes. In the Tree Language <a href="https://jtree.treenotation.org/designer#url%20https%3A%2F%2Fscroll.pub%2Fscrolldown.grammar">Designer</a>.</p>
+<p class="scrollParagraphComponent">Yes. In the <a href="https://jtree.treenotation.org/designer#url%20https%3A%2F%2Fscroll.pub%2Fscrolldown.grammar">Tree Language Designer</a>.</p>
 
 <h4 class="scrollQuestionComponent">What's an easy way to have GitHub run Scroll and build my HTML files automatically?</h4>
 
@@ -432,7 +423,7 @@ jobs:
           branch: scroll-output # The branch the action should deploy to.
           folder: .</code>
 
-<p class="scrollParagraphComponent">Commit and push. Now go to your GitHub Repo and then `Settings`, then `Pages`, and select the `scroll-output` branch as the Source for the pages. Click save. Your built site should be live.</p>
+<p class="scrollParagraphComponent">Commit and push. Now go to your GitHub Repo and then <code>Settings</code>, then <code>Pages</code>, and select the <code>scroll-output</code> branch as the Source for the pages. Click save. Your built site should be live.</p>
 
 <h4 class="scrollQuestionComponent">How do I check for broken links?</h4>
 
@@ -450,11 +441,11 @@ lighthouse https://scroll.pub --output-path scrollBrowserPerf.html; open scrollB
 
 <h4 class="scrollQuestionComponent">Where should I host my site?</h4>
 
-<p class="scrollParagraphComponent">Any web server works. You can even host your scroll for free using GitHub <a href="https://pages.github.com">Pages</a>, just like this site.</p>
+<p class="scrollParagraphComponent">Any web server works. You can even host your scroll for free using <a href="https://pages.github.com">GitHub Pages</a>, just like this site.</p>
 
 <h4 class="scrollQuestionComponent">How do I use Scroll with a custom domain?</h4>
 
-<p class="scrollParagraphComponent">Just buy a domain and point it to your web server or web host (such as GitHub Pages). Google <a href="https://domains.google">Domains</a> is where this domain is registered and is a great service.</p>
+<p class="scrollParagraphComponent">Just buy a domain and point it to your web server or web host (such as GitHub Pages). <a href="https://domains.google">Google Domains</a> is where this domain is registered and is a great service.</p>
 
 <h4 class="scrollQuestionComponent">How can I deploy my site?</h4>
 
@@ -487,7 +478,7 @@ goaccess /var/log/nginx/access.log -o /var/www/html/YOUR_SECRET_REPORT_URL.html 
 
 <h4 class="scrollQuestionComponent">Does Scroll support Open Graph tags for better social media sharing?</h4>
 
-<p class="scrollParagraphComponent">Yes. By default the first image and first paragraph of an article will be used for the "og:" tags. Unfortunately Twitter doesn't support relative image links so you need to specify `baseUrl` in your `scroll.settings` file. For more help check out the debuggers from <a href="https://developers.facebook.com/tools/debug">Facebook</a> and <a href="https://cards-dev.twitter.com/validator">Twitter</a>.</p>
+<p class="scrollParagraphComponent">Yes. By default the first image and first paragraph of an article will be used for the "og:" tags. Unfortunately <a href="https://cards-dev.twitter.com/validator">Twitter</a> doesn't support relative image links so you need to specify <code>baseUrl</code> in your <code>scroll.settings</code> file. For more help check out the debuggers from <a href="https://developers.facebook.com/tools/debug">Facebook</a> and Twitter.</p>
 
 <h4 class="scrollQuestionComponent">Does Scroll support themes?</h4>
 
@@ -527,10 +518,9 @@ node --cpu-prof --cpu-prof-name=scrollNodePerf.cpuprofile ~/scroll/scroll.js bui
 
 <p class="scrollParagraphComponent">Scrolldown and Web Components are similar in that both empower users to define their own reusable components. But Scrolldown is higher level than web components. For example, in addition to easily targetting HTML and web components, Scrolldown also plays really nicely with version control and 2D editors. Scrolldown encourages encoding semantic content with as little noise as possible, which creates benefits in many places.</p>
 
-<h4 class="scrollQuestionComponent">How do I format the Scrolldown Grammar file?</h4>
+<h4 class="scrollQuestionComponent">How do I build and format the combined Scrolldown Grammar file?</h4>
 
-<code class="scrollCodeBlockComponent"># Assuming you've already done `jtree register YOUR_PATH/jtree/langs/grammar/grammar.grammar`
-jtree format scrolldown.grammar</code>
+<code class="scrollCodeBlockComponent">./buildGrammar.js</code>
 
 <h4 class="scrollQuestionComponent">How do I run cross browser tests?</h4>
 
@@ -543,7 +533,7 @@ jtree format scrolldown.grammar</code>
     <a href="https://twitter.com/publicdomainpub"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Twitter icon</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
     <a href="https://github.com/publicdomaincompany/scroll"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
 </div>
-   <a href="https://scroll.pub" class="scrollCommunityLinkComponent">Built with Scroll v22.4.0</a>
+   <a href="https://scroll.pub" class="scrollCommunityLinkComponent">Built with Scroll v23.0.0</a>
 </div>
 </body>
 </html>
