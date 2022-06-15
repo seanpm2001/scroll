@@ -82,7 +82,8 @@ const settingsKeywords = {
 	ignoreGrammarFiles: "ignoreGrammarFiles",
 	git: "git",
 	scrollVersion: "scrollVersion",
-	baseUrl: "baseUrl"
+	baseUrl: "baseUrl",
+	css: "css" // "none", "split", or "inline". If not set defaults to "inline"
 }
 
 const defaultSettings = {
@@ -182,7 +183,12 @@ class Article {
 
 		const program = this.scrolldownProgram
 		const indexOfBreak = snippetBreakNode.getIndex()
-		return program.map((child, index) => (index >= indexOfBreak ? "" : child.compile())).join(program._getChildJoinCharacter()) + `<a class="scrollContinueReadingLink" href="${this.permalink}.html">Full article...</a>`
+		return (
+			program
+				.map((child, index) => (index >= indexOfBreak ? "" : child.compile()))
+				.filter(i => i)
+				.join(program._getChildJoinCharacter()) + `<a class="scrollContinueReadingLink" href="${this.permalink}.html">Full article...</a>`
+		)
 	}
 
 	get snippetBreakNode() {
@@ -320,10 +326,6 @@ class AbstractScrollPage {
   class scrollCommunityLinkComponent`
 	}
 
-	get css() {
-		return SCROLL_CSS.replace(/COLUMN_WIDTH/g, `${this.columnWidth}ch`)
-	}
-
 	get columnWidth() {
 		return this.scrollSettings.columnWidth ?? DEFAULT_COLUMN_WIDTH
 	}
@@ -331,6 +333,23 @@ class AbstractScrollPage {
 	get maxColumns() {
 		// If undefined will be autocomputed
 		return this.scrollSettings.maxColumns
+	}
+
+	get styleCode() {
+		// Default is to inline CSS. Otherwise we can split it into a sep file.
+		const css = this.scrollSettings[settingsKeywords.css]
+
+		if (css === "none") return ""
+
+		if (css === "split")
+			return `link
+   rel stylesheet
+   type text/css
+   href scroll.css`
+
+		return `styleTag
+   bern
+    ${cleanAndRightShift(SCROLL_CSS, 4)}`
 	}
 
 	get stumpCode() {
@@ -361,9 +380,7 @@ class AbstractScrollPage {
   meta
    name twitter:card
    content summary_large_image
-  styleTag
-   bern
-    ${cleanAndRightShift(this.css, 4)}
+  ${this.styleCode}
  body
   ${cleanAndRightShift(this.header, 2)}
   ${cleanAndRightShift(this.pageCode, 2)}
@@ -446,7 +463,7 @@ class ScrollArticlePage extends AbstractScrollPage {
 			maxColumns = estimatedLines > 10 ? 2 : 1
 		}
 		const maxTotalWidth = maxColumns * columnWidth + (maxColumns - 1) * COLUMN_GAP
-		return `column-count:${maxColumns};max-width:${maxTotalWidth}ch;`
+		return `column-width:${columnWidth}ch;column-count:${maxColumns};max-width:${maxTotalWidth}ch;`
 	}
 }
 
@@ -463,6 +480,7 @@ class ScrollIndexPage extends AbstractScrollPage {
 
 		return `div
  class ${cssClasses.scrollIndexPageComponent}
+ style column-width:${this.columnWidth}ch;
  ${cleanAndRightShift(articles, 1)}`
 	}
 
@@ -688,11 +706,16 @@ class ScrollFolder {
 		return write(this.scrollFolder + "/" + filename, new ScrollRssFeed(this).toXml())
 	}
 
+	buildCssFile(filename = "scroll.css") {
+		return write(this.scrollFolder + "/" + filename, SCROLL_CSS)
+	}
+
 	buildAll() {
 		this.buildIndexPage()
 		this.buildSinglePages()
 		if (this.shouldBuildSnippetsPage) this.buildSnippetsPage()
 		if (this.settings[settingsKeywords.baseUrl]) this.buildRssFeed()
+		if (this.settings[settingsKeywords.css] === "split") this.buildCssFile()
 	}
 
 	get shouldBuildSnippetsPage() {
