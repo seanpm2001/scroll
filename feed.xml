@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<rss version="0.91">
+<channel>
+ <title>📜 Scroll</title>
+ <link>https://scroll.pub/</link>
+ <description>The extensible alternative to Markdown</description>
+ <language>en-us</language>
+ <item>
+  <title>📜 Scroll: the extensible alternative to Markdown.</title>
+  <link>https://scroll.pub/index</link>
+ </item>
+</channel>
+</rss>
