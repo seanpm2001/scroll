@@ -2,7 +2,7 @@ paragraphNode
  description Prose content.
  catchAllNodeType paragraphContentNode
  extends abstractScrollNode
- crux paragraph
+ cruxFromId
  javascript
   get paragraphContent() {
     return this.childrenToString()
@@ -11,4 +11,4 @@ paragraphNode
    return `<p class="scrollParagraphComponent">${this.getRootNode().compileATags(this.paragraphContent)}</p>`
   }
 paragraphContentNode
- catchAllCellType textCell
+ catchAllCellType stringCell

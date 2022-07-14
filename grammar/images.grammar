@@ -2,7 +2,7 @@ imageNode
  description An img tag.
  cells keywordCell urlCell
  extends abstractScrollNode
- crux image
+ cruxFromId
  inScope imageCaptionNode
  javascript
   compile() {
@@ -27,4 +27,4 @@ imageCaptionNode
  description An optional caption to accompany the image.
  crux caption
  cells keywordCell
- catchAllCellType textCell
+ catchAllCellType stringCell
