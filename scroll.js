@@ -69,6 +69,7 @@ const scrollKeywords = {
 	sourceLink: "sourceLink",
 	permalink: "permalink",
 	paragraph: "paragraph",
+	aftertext: "aftertext",
 	image: "image",
 	date: "date",
 	importFrom: "importFrom",
@@ -133,26 +134,21 @@ class Article {
 	}
 
 	get ogImage() {
-		// my goodness the jtree API is bad. how do I get the first value of "image"?
-		return (
-			this.scrolldownProgram
-				.clone()
-				.reverse()
-				.get(scrollKeywords.image) ?? ""
-		)
+		const index = this.scrolldownProgram.indexOf(scrollKeywords.image)
+		return index > -1 ? this.scrolldownProgram.nodeAt(index).getContent() : ""
 	}
 
 	// Use the first paragraph for the description
 	get ogDescription() {
-		const node = this.scrolldownProgram
-			.clone()
-			.reverse()
-			.getNode(scrollKeywords.paragraph)
-		return node
-			? unsafeStripHtml(node.compile())
+		const program = this.scrolldownProgram
+		for (let node of program.getTopDownArrayIterator()) {
+			const word = node.getWord(0)
+			if (word === scrollKeywords.paragraph || word === scrollKeywords.aftertext)
+				return unsafeStripHtml(node.compile())
 					.replace(/\n/g, " ")
 					.substr(0, 300)
-			: ""
+		}
+		return ""
 	}
 
 	get includeInIndex() {
@@ -183,9 +179,10 @@ class Article {
 		return this.scrolldownProgram.get(scrollKeywords.columnWidth)
 	}
 
+	_htmlCode = ""
 	get htmlCode() {
-		const program = this.scrolldownProgram
-		return program.compile() + (this.sourceLink ? `<p class="${cssClasses.scrollArticleSourceLinkComponent}"><a href="${this.sourceLink}">Article source</a></p>` : "")
+		if (!this._htmlCode) this._htmlCode = this.scrolldownProgram.compile() + (this.sourceLink ? `<p class="${cssClasses.scrollArticleSourceLinkComponent}"><a href="${this.sourceLink}">Article source</a></p>` : "")
+		return this._htmlCode
 	}
 
 	get htmlCodeForSnippetsPage() {
@@ -479,7 +476,7 @@ div
 	}
 
 	get estimatedLines() {
-		return lodash.sum(this.article.scrolldownProgram.map(node => (node.getNodeTypeId() === "blankLineNode" ? 0 : node.getTopDownArray().length)))
+		return lodash.sum(this.article.scrolldownProgram.map(node => (node.getLine() === "" ? 0 : node.getTopDownArray().length)))
 	}
 
 	get cssColumnWorkaround() {
