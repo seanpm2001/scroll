@@ -8,7 +8,7 @@
  
  Generally you don't want to edit it by hand.
 
- Scroll v27.1.1
+ Scroll v28.0.0
 
 -->
 <html lang="en-US">
@@ -17,11 +17,10 @@
   <title>📜 Scroll: an extensible alternative to Markdown. - 📜 Scroll</title>
   <meta name="viewport" content="width=device-width,initial-scale=1"></meta>
   <meta name="description" content="An extensible alternative to Markdown"></meta>
-  <meta name="generator" content="Scroll v27.1.1"></meta>
+  <meta name="generator" content="Scroll v28.0.0"></meta>
   <meta property="og:title" content="📜 Scroll: an extensible alternative to Markdown."></meta>
   <meta property="og:description" content="Yes. Here is a web demo."></meta>
   <meta property="og:image" content="https://scroll.pub/public/screenshot.png"></meta>
-  <link rel="alternate" type="application/rss+xml" title="📜 Scroll" href="https://scroll.pub/feed.xml"></link>
   <meta name="twitter:card" content="summary_large_image"></meta>
   <style>html,body,div,span,h1,h2,h3,h4,p,ol,ul,table,figure {
   margin: 0;
@@ -75,7 +74,7 @@ html {
   text-decoration: none;
   color: rgba(204,204,204,.5);
 }
-.scrollIndexPageComponent,.scrollArticlePageComponent {
+.scrollGroupPageComponent,.scrollFilePageComponent {
   column-count: auto;
   column-fill: balance;
   column-width: 35ch;
@@ -85,23 +84,23 @@ html {
   padding-right: 20px;
   margin: auto;
 }
-.scrollArticlePageComponent {
+.scrollFilePageComponent {
   column-rule: none;
   padding-top: 8px;
 }
-.scrollArticlePageComponent .scrollTitleComponent {
+.scrollFilePageComponent .scrollTitleComponent {
   display: none;
 }
-.scrollSingleArticleTitle {
+.scrollFilePageTitle {
   text-align: center;
   margin-top: 8px;
   margin-bottom: 8px;
 }
-.scrollSingleArticleTitle a {
+.scrollFilePageTitle a {
   text-decoration: none;
   color: #000;
 }
-.scrollIndexPageArticleContainerComponent {
+.scrollGroupPageFileContainerComponent {
   border-bottom: 1px solid rgb(204,204,204);
   padding: 1ch 0;
   break-inside: avoid;
@@ -117,7 +116,7 @@ html {
   text-decoration: none;
   color: #000;
 }
-.scrollArticleDateComponent {
+.scrollDateComponent {
   font-style: italic;
   font-size: 80%;
 }
@@ -186,14 +185,14 @@ code {
   padding-left: 1em;
   margin-top: 0.4em;
 }
-.scrollArticleSourceLinkComponent {
+.scrollFileViewSourceUrlComponent {
   text-align: center;
   font-size: 80%;
   margin: 0;
   margin-top: 0.4em;
   line-height: 1.4em;
 }
-.scrollArticleSourceLinkComponent a {
+.scrollFileViewSourceUrlComponent a {
   color: #000;
   text-decoration: none;
 }
@@ -253,11 +252,10 @@ code {
 </h2>
    <div>An extensible alternative to Markdown</div>
 </div>
-  <h1 class="scrollSingleArticleTitle">
+  <h1 class="scrollFilePageTitle">
    <a href="index.html">📜 Scroll: an extensible alternative to Markdown.</a>
 </h1>
-  <div class="scrollArticlePageComponent" style=""><h1 class="scrollTitleComponent"><a href="index.html">📜 Scroll: an extensible alternative to Markdown.</a></h1>
-
+  <div class="scrollFilePageComponent" style=""><h1 class="scrollTitleComponent"><a href="index.html">📜 Scroll: an extensible alternative to Markdown.</a></h1>
 
 <a href="https://github.com/breck7/scroll/actions/workflows/didTheTestsPass.yml"><img src="https://github.com/breck7/scroll/actions/workflows/didTheTestsPass.yml/badge.svg" style="width: 49%;"/></a> <a href="https://gitpod.io/#https://github.com/breck7/scroll"><img style="width: 49%;" src="https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod"/></a>
 
@@ -269,13 +267,20 @@ code {
 
 <p class="scrollParagraphComponent">Yes. Here is a <a href="https://try.scroll.pub/">web demo</a>.</p>
 
+<h4 class="scrollQuestionComponent">Who is Scroll for?</h4>
+
+<p class="scrollParagraphComponent">Scroll is built for people who like writing, open source, git backed static site generators, and fast simple code.</p>
+
 <h4 class="scrollQuestionComponent">What makes Scroll different?</h4>
 
-<p class="scrollParagraphComponent">Scroll is different than <a href="https://staticsitegenerators.net">other static site generators</a> because it uses the easily extendible <b>ScrollScript</b>, so you can invent new languages to better fit your content.</p>
 
-<p class="scrollParagraphComponent">The basics of ScrollScript are even simpler than Markdown. For example, <i>the keyword for title is title</i>.</p>
 
-<p class="scrollParagraphComponent">You can stick to the basics or easily define new keywords to better fit your content and workflows. A simple indent is all you need to include sublanguages. No complex encoding needed.</p>
+
+<p class="scrollParagraphComponent">Scroll is not just <a href="https://staticsitegenerators.net">another static site generator</a> but also a <strong>new language</strong>. More than that—it's a simple, magical new language that you can extend in amazing ways. Scroll is mostly written in a new language called <a href="https://jtree.treenotation.org/designer/#standard%20grammar">Grammar</a>, and both Grammar and Scroll are built on a new revolutionarily simple new syntax called <a href="https://treenotation.org">Tree Notation</a>.</p>
+
+<p class="scrollParagraphComponent">The basics of Scroll are even simpler than Markdown. For example, <i>the keyword for title is title</i>.</p>
+
+<p class="scrollParagraphComponent">You can stick to the basics or easily define new keywords extending the language to better fit your content and workflows. A simple indent is all you need to include sublanguages. No complex encoding needed.</p>
 
 <h4 class="scrollQuestionComponent">How do I extend Scroll?</h4>
 
@@ -295,15 +300,25 @@ recipe
  step Heat oven to 350 degrees
  step Bake for 10 minutes</code>
 
-<p class="scrollParagraphComponent">Your grammar extension might generate beautiful custom HTML for that recipe section and also perhaps allow users to vote on it, or include it in a CSV export, et cetera. ScrollScript let's you combine mini-languages in a simple and non-conflicting way. What you do with those languages is up to you.</p>
+<p class="scrollParagraphComponent">Notice that your post uses the keyword <code>recipe</code>, but Scroll does not have a keyword for that. No problem, just define it yourself using the Grammar Language, extending your dialect of Scroll:</p>
 
-<p class="scrollParagraphComponent">(Warning: the cookies above have not been tasted)</p>
+<code class="scrollCodeBlockComponent">recipeNode
+ extends abstractScrollNode
+ javascript
+  compile() {
+    const addYourSpecialMagic = ""
+    return `&lt;div>${addYourSpecialMagic}&lt;/div>`
+  }</code>
 
-<p class="scrollParagraphComponent">For an extended example of extending Scroll check out this <a href="https://github.com/breck7/breckyunits.com/tree/main/markups">one</a> which adds node types for Markdown, Textile, and BBCode.</p>
+<p class="scrollParagraphComponent">Your extension might generate beautiful custom HTML for that recipe section and also perhaps allow users to vote on it, or include it in a CSV export, et cetera. Scroll let's you combine mini-languages in a simple and non-conflicting way. What you do with those languages is up to you.</p>
+
+<p class="scrollParagraphComponent">(Diclosure: the cookie recipe above has not been taste tested)</p>
+
+<p class="scrollParagraphComponent">For an extended example of extending Scroll check out this <a href="https://scroll.pub/blog/indented-heredocs.html">one</a> which adds node types for Markdown, Textile, and BBCode.</p>
 
 <h4 class="scrollQuestionComponent">What kind of sites can I use Scroll to build?</h4>
 
-<p class="scrollParagraphComponent">Scroll work great for blogs, collaborative databases, newspapers, intranets and other types of static sites as well.</p>
+<p class="scrollParagraphComponent">Scroll is a great solution for blogs and sites of <a href="https://scroll.pub">one page</a>, <a href="https://scroll.pub/blog/">a few pages</a>, <a href="https://breckyunits.com/code/">tens of pages</a>, <a href="https://breckyunits.com/">hundreds of pages</a>, or even <a href="https://pldb.com/">thousands of pages</a>.</p>
 
 <h4 class="scrollQuestionComponent">How do I get Scroll?</h4>
 
@@ -339,17 +354,7 @@ npm install -g .</code>
 
 <h4 class="scrollQuestionComponent">What are some example sites using Scroll?</h4>
 
-<p class="scrollParagraphComponent">This page, <a href="https://breckyunits.com">BreckYunits.com</a> and <a href="https://treebase.treenotation.org/treedb/">TreeDB</a>.</p>
-
-<h4 class="scrollQuestionComponent">What does the name Scroll refer to?</h4>
-
-<p class="scrollParagraphComponent"><em>A scroll</em> is a single folder containing ScrollScript files ending in <code>.scroll</code> and an optional <code>scroll.settings</code> file.
-Scroll compiles those ScrollScript files into a static index.html page.</p>
-
-<p class="scrollParagraphComponent">Scroll is also the name of the command line app that includes a
-simple fs watch app for live preview.</p>
-
-<p class="scrollParagraphComponent">ScrollScript is the name of a Tree Language defined in this <a href="https://github.com/breck7/scroll/tree/main/grammar">grammar</a>.</p>
+<p class="scrollParagraphComponent">Scroll currently powers blog and sites of <a href="https://scroll.pub">one page</a>, <a href="https://scroll.pub/blog/">a few pages</a>, <a href="https://breckyunits.com/code/">tens of pages</a>, <a href="https://breckyunits.com/">hundreds of pages</a>, and even <a href="https://pldb.com/">thousands of pages</a>.</p>
 
 <h4 class="scrollQuestionComponent">What does a typical project folder look like?</h4>
 
@@ -358,20 +363,22 @@ built by Scroll, looks like this:</p>
 
 <code class="scrollCodeBlockComponent">📁yourDomainName.org
  about.scroll
- publishedArticle.scroll
- anImageInTheArticle.png
- scroll.settings</code>
+ feed.scroll
+ firstPost.scroll
+ index.scroll
+ settings.scroll
+ anImageInTheArticle.png </code>
 
-<p class="scrollParagraphComponent">When you build a Scroll site, you are simply generating
-the <code>index.html</code> and <code>[article].html</code> files in the site's folder.</p>
+<p class="scrollParagraphComponent">When you run <code>scroll build</code>, Scroll reads those files and generates
+the outputs right in that site's folder.</p>
 
 <p class="scrollParagraphComponent">With Scroll your site's Scroll files and static files and generated html
 are all in one public folder and checked into version control. Usually you
-want to add <code>*.html</code> to your <code>.gitignore</code>.
+want to add <code>*.html</code> and <code>feed.xml</code> to your <code>.gitignore</code>.
 </p>
 <h4 class="scrollQuestionComponent">How do I save drafts?</h4>
 
-<p class="scrollParagraphComponent">Have a draft scroll next to your published scroll. For example:</p>
+<p class="scrollParagraphComponent">Have a drafts folder next to your published scroll. For example:</p>
 
 <code class="scrollCodeBlockComponent">📁drafts
  someDraft.scroll
@@ -380,18 +387,16 @@ want to add <code>*.html</code> to your <code>.gitignore</code>.
 
 <h4 class="scrollQuestionComponent">What file formats does Scroll use?</h4>
 
-<p class="scrollParagraphComponent">Scroll articles are written as ScrollScript files with the file
-extension <code>scroll</code>. The current base grammar for ScrollScript is defined <a href="https://github.com/breck7/scroll/tree/main/grammar">here</a>.</p>
+<p class="scrollParagraphComponent">Scroll articles are written as Scroll files with the file
+extension <code>scroll</code>. The current base grammar for Scroll is defined <a href="https://github.com/breck7/scroll/tree/main/grammar">here</a>.</p>
 
 <h4 class="scrollQuestionComponent">What language is Scroll written in?</h4>
 
-<p class="scrollParagraphComponent">The Scroll CLI app is written in plain Javascript and
+<p class="scrollParagraphComponent">Scroll is mostly written in <a href="https://jtree.treenotation.org/designer/#standard%20grammar">Grammar</a>. The Scroll CLI app is written in plain Javascript and
 runs in Node.js. Scroll makes heavy use of Tree Languages. The CSS is
-written in <a href="https://jtree.treenotation.org/designer/#standard%20hakon">Hakon</a>.
-The HTML is written in <a href="https://jtree.treenotation.org/designer/#standard%20stump">stump</a>.</p>
+written in <a href="https://jtree.treenotation.org/designer/#standard%20hakon">Hakon</a>. The HTML is written in <a href="https://jtree.treenotation.org/designer/#standard%20stump">stump</a>.</p>
 
-<p class="scrollParagraphComponent">TypeScript may be used in the future but Scroll may
-never get over 1kloc so that might not be necessary.</p>
+<p class="scrollParagraphComponent">TypeScript is not used in the Scroll repo and because the Javascript is only ~1kloc that likely will not be necessary.</p>
 
 <h4 class="scrollQuestionComponent">How does versioning of articles work?</h4>
 
@@ -404,7 +409,7 @@ a single file tracked by git.</p>
 
 <h4 class="scrollQuestionComponent">Why does the default theme have a single page layout?</h4>
 
-<p class="scrollParagraphComponent">The default Scroll theme is designed to make it easier for <b>syntopic reading</b>. Being able to scan the page like a newspaper. This allows you to read at a higher level—to "get in the author's head"—compared to reading one article at a time from beginning to end.</p>
+<p class="scrollParagraphComponent">The default Scroll theme is designed to make it easier for <strong>syntopic reading</strong>. Being able to scan the page like a newspaper. This allows you to read at a higher level—to "get in the author's head"—compared to reading one article at a time from beginning to end.</p>
 
 <p class="scrollParagraphComponent">And if anyone prefers to read a scroll in a different way—they can! Scroll is for
 public domain sites. People are free to arrange the symbols any way they wish.</p>
@@ -422,7 +427,7 @@ public domain sites. People are free to arrange the symbols any way they wish.</
 <p class="scrollParagraphComponent">This was originally a bug. But then it turns out to be a feature, as it
 gives older articles, which are often more important, more visibility.</p>
 
-<h4 class="scrollQuestionComponent">Is there a place I can play with the ScrollScript grammar and see how it compiles to HTML?</h4>
+<h4 class="scrollQuestionComponent">Is there a place I can play with the Scroll grammar?</h4>
 
 <p class="scrollParagraphComponent">Yes. In the <a href="https://jtree.treenotation.org/designer#url%20https%3A%2F%2Ftry.scroll.pub%2FscrollScript.grammar">Tree Language Designer</a>.</p>
 
@@ -512,11 +517,19 @@ pandoc index.html -o book.epub</code>
 <code class="scrollCodeBlockComponent"># apt-get install goaccess
 goaccess /var/log/nginx/access.log -o /var/www/html/YOUR_SECRET_REPORT_URL.html --log-format=COMBINED --real-time-html --ws-url=wss://YOURDOMAIN.com</code>
 
+<h4 class="scrollQuestionComponent">Does Scroll support RSS?</h4>
+
+<p class="scrollParagraphComponent">Yes! Just create a <code>feed.scroll</code> file like <a href="https://github.com/breck7/scroll/blob/main/public/blog/feed.scroll">this</a>.</p>
+
+<h4 class="scrollQuestionComponent">Does Scroll support categories and category pages?</h4>
+
+<p class="scrollParagraphComponent">Yes! Just add your page to a category by using the <code>groups</code> keyword and then creating a <code>yourGroupName.scroll</code> page for the group. See a demo <a href="https://github.com/breck7/scroll/blob/main/public/blog/">here</a>.</p>
+
 <h4 class="scrollQuestionComponent">Does Scroll support Open Graph tags for better social media sharing?</h4>
 
-<p class="scrollParagraphComponent">Yes. By default the first image and first paragraph of an article will be used for the "og:" tags. Unfortunately <a href="https://cards-dev.twitter.com/validator">Twitter</a> doesn't support relative image links so you need to specify <code>baseUrl</code> in your <code>scroll.settings</code> file. For more help check out the debuggers from <a href="https://developers.facebook.com/tools/debug">Facebook</a> and Twitter.</p>
+<p class="scrollParagraphComponent">Yes. By default the first image and first paragraph of an article will be used for the "og:" tags. Unfortunately <a href="https://cards-dev.twitter.com/validator">Twitter</a> doesn't support relative image links so you need to specify <code>baseUrl</code>. For more help check out the debuggers from <a href="https://developers.facebook.com/tools/debug">Facebook</a> and Twitter.</p>
 
-<h4 class="scrollQuestionComponent">Does Scroll support themes?</h4>
+<h4 class="scrollQuestionComponent">Does Scroll support themes and templates?</h4>
 
 <p class="scrollParagraphComponent">Yes! Scroll includes a simple API for changing the style of your site. This is an active area of development so please reach out if you'd like to customize the look of your Scroll.</p>
 
@@ -526,10 +539,8 @@ goaccess /var/log/nginx/access.log -o /var/www/html/YOUR_SECRET_REPORT_URL.html 
 
 <h4 class="scrollQuestionComponent">What were some alternatives considered?</h4>
 
-<p class="scrollParagraphComponent">There was no publishing software that reads and writes ScrollScript yet
-so building Scroll was necessary. <a href="https://jekyllrb.com">Jekyll</a>
-and <a href="https://github.com/breck7/brecksblog">Brecksblog</a> were the two
-biggest inspirations.</p>
+<p class="scrollParagraphComponent">There was no publishing software that reads and writes Scroll yet
+so building Scroll was necessary. <a href="https://jekyllrb.com">Jekyll</a> and <a href="https://github.com/breck7/brecksblog">Brecksblog</a> were the two biggest inspirations.</p>
 
 <h4 class="scrollQuestionComponent">What has changed in recent versions?</h4>
 
@@ -552,20 +563,41 @@ node --cpu-prof --cpu-prof-name=scrollNodePerf.cpuprofile ~/scroll/scroll.js bui
 
 <h4 class="scrollQuestionComponent">How is a keyword different than a web components?</h4>
 
-<p class="scrollParagraphComponent">ScrollScript and Web Components are similar in that both empower users to define their own reusable components. But ScrollScript is higher level than web components. For example, in addition to easily targetting HTML and web components, ScrollScript also plays really nicely with version control and 2D editors. ScrollScript encourages encoding semantic content with as little noise as possible, which creates benefits in many places.</p>
+<p class="scrollParagraphComponent">Scroll and Web Components are similar in that both empower users to define their own reusable components. But Scroll is higher level than web components. For example, in addition to easily targetting HTML and web components, Scroll also plays really nicely with version control and 2D editors. Scroll encourages encoding semantic content with as little noise as possible, which creates benefits in many places.</p>
 
 <h4 class="scrollQuestionComponent">How do I run cross browser tests?</h4>
 
 <p class="scrollParagraphComponent">For that we use <a href="https://browserstack.com">BrowserStack</a>.</p>
 
-<p class="scrollArticleSourceLinkComponent"><a href="https://github.com/breck7/scroll/blob/main/readme.scroll">Article source</a></p></div>
+<h4 class="scrollQuestionComponent">Why the name Scroll?</h4>
+
+<p class="scrollParagraphComponent">The scroll was invented thousands of years ago and scrolls are still useful today. Scroll has been designed with a focus on simplicity and a goal of making something that would have been useful decades ago, with the hope that this will make it useful decades into the future.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="scrollKeyboardNav"><a href="releaseNotes.html">releaseNotes.html</a> · index.html · <a href="releaseNotes.html">releaseNotes.html</a><script>document.addEventListener('keydown', function(event) {
+  if (document.activeElement !== document.body) return
+  const getLinks = () => document.getElementsByClassName("scrollKeyboardNav")[0].getElementsByTagName("a")
+  if (event.key === "ArrowLeft")
+    getLinks()[0].click()
+  else if (event.key === "ArrowRight")
+    getLinks()[1].click()
+ });</script></div>
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/scroll/blob/main/readme.scroll">View source</a></p></div>
   <div class="scrollFooterComponent">
    <div class="scrollSocialMediaIconsComponent">
     <a href="mailto:feedback@scroll.pub"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gmail icon</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></a>
     <a href="https://twitter.com/breckyunits"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Twitter icon</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
     <a href="https://github.com/breck7/scroll"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
 </div>
-   <a href="https://scroll.pub" class="scrollCommunityLinkComponent">Built with Scroll v27.1.1</a>
+   <a href="https://scroll.pub" class="scrollCommunityLinkComponent">Built with Scroll v28.0.0</a>
 </div>
 </body>
 </html>

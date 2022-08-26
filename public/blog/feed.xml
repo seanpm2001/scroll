@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<rss version="0.91">
+<channel>
+ <title>The Scroll Blog</title>
+ <link>https://scroll.pub/blog/</link>
+ <description>Official blog for Scroll</description>
+ <language>en-us</language>
+ <item>
+  <title>A Tour of Scroll</title>
+  <link>undefineda-tour-of-scroll.html</link>
+ </item>
+</channel>
+</rss>
