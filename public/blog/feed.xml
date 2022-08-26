@@ -9,5 +9,9 @@
   <title>A Tour of Scroll (coming soon)</title>
   <link>undefineda-tour-of-scroll.html</link>
  </item>
+ <item>
+  <title>The Power of Indented Heredocs: Markdown, Textile, and BBCode in one file with no escaping</title>
+  <link>undefinedindented-heredocs.html</link>
+ </item>
 </channel>
 </rss>
