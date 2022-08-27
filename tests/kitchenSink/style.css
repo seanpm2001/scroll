@@ -155,6 +155,29 @@ code {
 .scrollTableComponent tr:nth-child(even) {
   background: rgba(224,224,224,.6);
 }
+.scrollAuthor {
+  font-size: 12px;
+  font-style: italic;
+  margin: 4px 0;
+  text-align: center;
+}
+.scrollKpiTable {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  break-inside: avoid;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.scrollKpiTable td {
+  width: 33.3%;
+  border: 1px solid #e8e8e8;
+}
+.scrollKpiTable span {
+  font-size: 20p;;
+  display: block;
+}
 .scrollUnorderedListComponent,.scrollOrderedListComponent {
   text-align: left;
   line-height: 1.4em;

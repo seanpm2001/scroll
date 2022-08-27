@@ -8,7 +8,7 @@
  
  Generally you don't want to edit it by hand.
 
- Scroll v28.2.0
+ Scroll v28.3.0
 
 -->
 <html lang="en-US">
@@ -17,7 +17,7 @@
   <title>The Kitchen Sink Blog</title>
   <meta name="viewport" content="width=device-width,initial-scale=1"></meta>
   <meta name="description" content="Kitchen sink test site."></meta>
-  <meta name="generator" content="Scroll v28.2.0"></meta>
+  <meta name="generator" content="Scroll v28.3.0"></meta>
   <meta property="og:title" content="The Kitchen Sink Blog"></meta>
   <meta property="og:description" content="Kitchen sink test site."></meta>
   <meta property="og:image" content=""></meta>
@@ -179,6 +179,29 @@ code {
 .scrollTableComponent tr:nth-child(even) {
   background: rgba(224,224,224,.6);
 }
+.scrollAuthor {
+  font-size: 12px;
+  font-style: italic;
+  margin: 4px 0;
+  text-align: center;
+}
+.scrollKpiTable {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  break-inside: avoid;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.scrollKpiTable td {
+  width: 33.3%;
+  border: 1px solid #e8e8e8;
+}
+.scrollKpiTable span {
+  font-size: 20p;;
+  display: block;
+}
 .scrollUnorderedListComponent,.scrollOrderedListComponent {
   text-align: left;
   line-height: 1.4em;
@@ -252,6 +275,8 @@ code {
 
 
 
+<div class="scrollAuthor">by <a href="https://breckyunits.com">Breck Yunits</a></div>
+
 
 
 <div class="scrollKeyboardNav"><a href="a-review-of-my-sink.html">a-review-of-my-sink.html</a> · top-sinks.html · <a href="a-review-of-my-sink.html">a-review-of-my-sink.html</a><script>document.addEventListener('keydown', function(event) {
@@ -268,6 +293,11 @@ code {
 Good morning
 Good morning
 Good morning
+
+<table class="scrollKpiTable"><tr><td>10<span>in database</span></td>
+<td>$0<span>budget</span></td>
+<td>3<span>countries</span></td></tr>
+</table>
 
 <p class="scrollParagraphComponent">There are 10 in my list.</p><p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/scroll/blob/main/tests/kitchenSink/top-sinks.scroll">View source</a></p></div>
    <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="about.html">About the Kitchen Sink Blog</a></h1>
