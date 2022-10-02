@@ -6,6 +6,10 @@
  <description>Official blog for Scroll</description>
  <language>en-us</language>
  <item>
+  <title>Introducing the Blink Tag</title>
+  <link>https://scroll.pub/public/blog/introducingBlink.html</link>
+ </item>
+ <item>
   <title>A Tour of Scroll (coming soon)</title>
   <link>https://scroll.pub/public/blog/a-tour-of-scroll.html</link>
  </item>
