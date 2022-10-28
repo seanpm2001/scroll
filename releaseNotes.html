@@ -8,7 +8,7 @@
  
  Generally you don't want to edit it by hand.
 
- Scroll v36.1.0
+ Scroll v37.0.0
 
 -->
 <html lang="en-US">
@@ -17,9 +17,9 @@
   <title>Scroll Release Notes - 📜 Scroll</title>
   <meta name="viewport" content="width=device-width,initial-scale=1"></meta>
   <meta name="description" content="Tools for thought."></meta>
-  <meta name="generator" content="Scroll v36.1.0"></meta>
+  <meta name="generator" content="Scroll v37.0.0"></meta>
   <meta property="og:title" content="Scroll Release Notes"></meta>
-  <meta property="og:description" content="Some simple and advanced usages. An absolute link and a relative link. Show some added text or some deleted text."></meta>
+  <meta property="og:description" content="Here's a list of the notable changes in Scroll."></meta>
   <meta property="og:image" content="https://scroll.pub//public/screenshot.png"></meta>
   <meta name="twitter:card" content="summary_large_image"></meta>
   <style>html,body,div,span,h1,h2,h3,h4,p,ol,ul,table,figure {
@@ -137,7 +137,7 @@ html {
   white-space: pre-line;
   border-left: .5em solid rgba(204,204,204,.8);
 }
-.scrollSectionComponent,.scrollSubsectionComponent {
+.scrollSectionComponent {
   text-align: center;
   margin-top: 1em;
 }
@@ -206,12 +206,6 @@ code {
   font-size: 20p;;
   display: block;
 }
-.scrollUnorderedListComponent,.scrollOrderedListComponent {
-  text-align: left;
-  line-height: 1.4em;
-  padding-left: 1em;
-  margin-top: 0.4em;
-}
 .scrollFileViewSourceUrlComponent {
   text-align: center;
   font-size: 80%;
@@ -278,6 +272,23 @@ code {
   <div class="scrollFilePageComponent" style=""><h1 class="scrollTitleComponent"><a href="releaseNotes.html">Scroll Release Notes</a></h1>
 
 <p class="scrollParagraphComponent">Here's a list of the notable changes in Scroll.</p>
+
+<h3 class="scrollSectionComponent">37.0.0 10-28-2022</h3>
+<ul><li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed the original <code>aftertext</code> node in favor of <code><strong></code> nodes. Regex [search replace] to upgrade: <code>^aftertext\n </code> <code></strong> </code></p></li>
+<li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed basic <code>paragraph</code> node. Regex [search replace] to upgrade: <code>^paragraph\n </code> <code>* </code></p></li>
+<li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed basic <code>question</code> node. Regex [search replace] to upgrade: <code>^question </code> <code>? </code></p></li>
+<li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed basic <code>question</code> node. Regex [search replace] to upgrade: <code>^question </code> <code>? </code></p></li>
+<li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed basic <code>section</code> node. Regex [search replace] to upgrade: <code>^section </code> <code># </code></p></li>
+<li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed basic <code>subsection</code> node. Regex [search replace] to upgrade: <code>^subsection </code> <code>## </code></p></li>
+<li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed basic <code>list</code> node.</p></li>
+<li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed basic <code>orderedList</code> node.</p></li>
+<li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed basic <code>unorderedList</code> node.</p></li>
+<li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed support for 🔗 links.</p></li></ul>
+
+<p class="scrollParagraphComponent">The goal of this release is to simplify and speed up Scroll by removing legacy features.</p>
+<p class="scrollParagraphComponent">This is a major release that removes a bunch of the original keywords in favor of the newer more advanced aftertext nodes.</p>
+<p class="scrollParagraphComponent">If you don't want to upgrade at this time, it's very easy to just add the removed grammar definitions from this commit into your existing scrolls using the normal extension pattern.</p>
+<p class="scrollParagraphComponent">You can also easily alias the newer aftertext node types with the original keywords above if you'd prefer.</p>
 
 <h3 class="scrollSectionComponent">36.1.0 10-27-2022</h3>
 <ul><li><p class="scrollParagraphComponent">🎉 Now you can leave the "pattern" part blank in link node in aftertext to make the whole line a link.</p></li>
@@ -549,11 +560,10 @@ print "Hello world"</pre></td>
 <h3 class="scrollSectionComponent">24.6.0 6-10-2022</h3>
 <ul><li><p class="scrollParagraphComponent">🎉 added <code>wrap</code> keyword for advanced custom wraps in aftertext.</p></li></ul>
 
-<p class="scrollParagraphComponent">Some <em>simple</em> and <b>advanced</b> usages.
+<p class="scrollParagraphComponent">Some <em>simple</em> and <b<strong>advanced</b</strong> usages.
 An <a href="https://example.com">absolute link</a> and <a href="potato.html">a relative link</a>.
 Show some <span style="color:green">added text</span> or some <span style="color:red; text-decoration: line-through;">deleted text</span>.</p>
-<code class="scrollCodeBlockComponent">aftertext
- Some !simple! and *advanced* usages.
+<code class="scrollCodeBlockComponent">* Some !simple! and *advanced* usages.
  An #absolute link# and @@@a relative link@@@.
  Show some ++added text++ or some --deleted text--.
  wrap ! em
@@ -566,9 +576,8 @@ Show some <span style="color:green">added text</span> or some <span style="color
 <h3 class="scrollSectionComponent">24.5.0 6-10-2022</h3>
 <ul><li><p class="scrollParagraphComponent">🎉 added <code>wrapsOn</code> keyword to aftertext.</p></li></ul>
 
-<p class="scrollParagraphComponent">Support for traditional <strong>bold</strong>, <code>code</code>, and <em>italics</em> in aftertext with the keyword <code>wrapsOn</code>.</p>
-<code class="scrollCodeBlockComponent">aftertext
- Support for traditional *bold*, `code`, and _italics_ in aftertext with the keyword `wrapsOn`.
+<p class="scrollParagraphComponent">Support for traditional <strong<strong>bold</strong</strong>, <code<code>code</code</code>, and <em<em>italics</em</em> in aftertext with the keyword <code<code>wrapsOn</code</code>.</p>
+<code class="scrollCodeBlockComponent">* Support for traditional *bold*, `code`, and _italics_ in aftertext with the keyword `wrapsOn`.
  wrapsOn</code>
 
 <h3 class="scrollSectionComponent">24.4.0 6-08-2022</h3>
@@ -585,8 +594,7 @@ Show some <span style="color:green">added text</span> or some <span style="color
 <h4 class="scrollSectionComponent">Caveat Example</h4>
 
 <p class="scrollParagraphComponent">This is a <span class="scrollCaveat" title="I'm not actually sure if this is a great idea. But often I want to include a comment and link it back to the text, but don't quite want to footnote it.">great</span> idea.</p>
-<code class="scrollCodeBlockComponent">aftertext
- This is a great idea.
+<code class="scrollCodeBlockComponent">* This is a great idea.
  caveat great
   I'm not actually sure if this is a great idea. But often I want to include a comment and link it
   back to the text, but don't quite want to footnote it.</code>
@@ -594,8 +602,7 @@ Show some <span style="color:green">added text</span> or some <span style="color
 <h4 class="scrollSectionComponent">Link Quote Example</h4>
 
 <p class="scrollParagraphComponent"><a href="https://example.com/report" title="The average growth in the treatment group was 14.2x higher than the control group.">This report</a> showed the treatment had a big impact.</p>
-<code class="scrollCodeBlockComponent">aftertext
- This report showed the treatment had a big impact.
+<code class="scrollCodeBlockComponent">* This report showed the treatment had a big impact.
  https://example.com/report This report
   note
    The average growth in the treatment group was 14.2x higher than the control group.</code>
@@ -642,8 +649,7 @@ loremIpsum 20</code>
 
 <p class="scrollParagraphComponent">By default the article's date will be used but you can also provide a custom date.</p>
 
-<code class="scrollCodeBlockComponent">aftertext
- A truck transporting llamas collided into a pajama factory late last night.
+<code class="scrollCodeBlockComponent">* A truck transporting llamas collided into a pajama factory late last night.
  dateline 2/21/2020</code>
 <p class="scrollParagraphComponent"><span class="scrollDateComponent">February 21, 2020 — </span>A truck transporting llamas collided into a pajama factory late last night.</p>
 
@@ -659,8 +665,7 @@ loremIpsum 20</code>
 <h4 class="scrollQuestionComponent">Can you show an example of the new advanced aftertext features?</h4>
 
 <p class="scrollParagraphComponent">How much <span class="standout">wood</span> can a <a href="https://en.wikipedia.org/wiki/Groundhog">woodchuck</a> chuck if a <a href="https://en.wikipedia.org/wiki/Groundhog">woodchuck</a> could chuck <span class="standout">wood</span>?</p>
-<code class="scrollCodeBlockComponent">aftertext
- How much wood can a woodchuck chuck if a woodchuck could chuck wood?
+<code class="scrollCodeBlockComponent">* How much wood can a woodchuck chuck if a woodchuck could chuck wood?
  link https://en.wikipedia.org/wiki/Groundhog woodchuck
   matchAll
  class standout wood
@@ -689,8 +694,7 @@ loremIpsum 20</code>
 <h4 class="scrollQuestionComponent">Can you show an example of aftertext?</h4>
 
 <p class="scrollParagraphComponent">You write some text. <i>After your text</i>, you add your markup instructions with <i>selectors</i> to select the text to markup, one command per line. For example, this paragraph is written in Aftertext and the source code looks like:</p>
-<code class="scrollCodeBlockComponent">aftertext
- You write some text. After your text, you add your markup instructions with selectors to select the text to markup, one command per line. For example, this paragraph is written in Aftertext and the source code looks like:
+<code class="scrollCodeBlockComponent">* You write some text. After your text, you add your markup instructions with selectors to select the text to markup, one command per line. For example, this paragraph is written in Aftertext and the source code looks like:
  italics After your text
  italics selectors</code>
 
@@ -734,7 +738,7 @@ loremIpsum 20</code>
 <li><p class="scrollParagraphComponent">🎉 new subsection nodetype. Simply compiles to an h4 for now but more semantic this way.</p></li>
 <li><p class="scrollParagraphComponent">⚠️ title2-title6 have been removed. use question, section and subsection instead.</p></li></ul>
 
-<h4 class="scrollQuestionComponent">Why the new `question` nodes?</h4>
+<h4 class="scrollQuestionComponent">Why the new <code>question</code> nodes?</h4>
 
 <p class="scrollParagraphComponent">Question and answer structures are literally older than the Socratic Method. Such a common semantic pattern deserves it's own keywords.</p>
 
@@ -809,8 +813,8 @@ Find ^title\d (.+)
 
 <th>why</th>
 </tr></thead>
-<tbody><tr><td>PipeTable</td>
-<td>Because it's awesome!</td>
+<tbody><tr><td></td>
+<td></td>
 </tr></tbody></table>
 
 <h3 class="scrollSectionComponent">17.0.0 05-25-2021</h3>
@@ -883,12 +887,10 @@ $2🔗$1</code>
 <p class="scrollParagraphComponent">The 🔗link tag only supports single word links. Like everything with ScrollScript, you have
 a number of options if the conventional design doesn't work for you. Your options are:</p>
 
-<ul class="scrollUnorderedListComponent">
-<li>Link just one word. If you need more, perhaps camelCase or snake_case your words together into one concept.</li>
-<li>Repeat the link twice <code>foo 🔗link bar 🔗link</code></li>
-<li>Use &lt;a> tags.</li>
-<li>Extend the ScrollScript grammar for your site.</li>
-</ul>
+<ul><li><p class="scrollParagraphComponent">1. Link just one word. If you need more, perhaps camelCase or snake_case your words together into one concept.</p></li>
+<li><p class="scrollParagraphComponent">2. Repeat the link twice <code>foo 🔗link bar 🔗link</code></p></li>
+<li><p class="scrollParagraphComponent">3. Use &lt;a> tags.</p></li>
+<li><p class="scrollParagraphComponent">4. Extend the ScrollScript grammar for your site.</p></li></ul>
 
 <h4 class="scrollQuestionComponent">Can I not include a page in the index page?</h4>
 
@@ -968,7 +970,7 @@ in the index. To do that, just add <code>skipIndexPage</code>.</p>
    <a href="mailto:feedback@scroll.pub"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gmail icon</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></a>
    <a href="https://twitter.com/breckyunits"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Twitter icon</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
    <a href="https://github.com/breck7/scroll"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
-   <a href="https://scroll.pub" class="scrollCommunityLinkComponent">Built with Scroll v36.1.0</a>
+   <a href="https://scroll.pub" class="scrollCommunityLinkComponent">Built with Scroll v37.0.0</a>
 </div>
 </body>
 </html>

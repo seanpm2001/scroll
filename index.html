@@ -8,7 +8,7 @@
  
  Generally you don't want to edit it by hand.
 
- Scroll v36.1.0
+ Scroll v37.0.0
 
 -->
 <html lang="en-US">
@@ -17,7 +17,7 @@
   <title>📜 Scroll: tools for thought. - 📜 Scroll</title>
   <meta name="viewport" content="width=device-width,initial-scale=1"></meta>
   <meta name="description" content="Tools for thought."></meta>
-  <meta name="generator" content="Scroll v36.1.0"></meta>
+  <meta name="generator" content="Scroll v37.0.0"></meta>
   <meta property="og:title" content="📜 Scroll: tools for thought."></meta>
   <meta property="og:description" content="Yes. Here is a web demo."></meta>
   <meta property="og:image" content="https://scroll.pub//public/screenshot.png"></meta>
@@ -137,7 +137,7 @@ html {
   white-space: pre-line;
   border-left: .5em solid rgba(204,204,204,.8);
 }
-.scrollSectionComponent,.scrollSubsectionComponent {
+.scrollSectionComponent {
   text-align: center;
   margin-top: 1em;
 }
@@ -205,12 +205,6 @@ code {
 .scrollKpiTable span {
   font-size: 20p;;
   display: block;
-}
-.scrollUnorderedListComponent,.scrollOrderedListComponent {
-  text-align: left;
-  line-height: 1.4em;
-  padding-left: 1em;
-  margin-top: 0.4em;
 }
 .scrollFileViewSourceUrlComponent {
   text-align: center;
@@ -300,7 +294,7 @@ code {
 
 
 
-<p class="scrollParagraphComponent">Scroll is not just <a href="https://staticsitegenerators.net">another static site generator</a> but also a <strong>new language</strong>. More than just a new language. It's a <em>freakishly simple new language that you can extend in amazing ways</em>. Scroll is a high level language mostly written in a new lower level language called <a href="https://jtree.treenotation.org/designer/#standard%20grammar">Grammar</a>, and both Grammar and Scroll are built on the new syntax called <a href="https://treenotation.org">Tree Notation</a>.</p>
+<p class="scrollParagraphComponent">Scroll is not just <a href="https://staticsitegenerators.net">another static site generator</a> but also a <strong<strong>new language</strong</strong>. More than just a new language. It's a <em<em>freakishly simple new language that you can extend in amazing ways</em</em>. Scroll is a high level language mostly written in a new lower level language called <a href="https://jtree.treenotation.org/designer/#standard%20grammar">Grammar</a>, and both Grammar and Scroll are built on the new syntax called <a href="https://treenotation.org">Tree Notation</a>.</p>
 
 <p class="scrollParagraphComponent">The basics of Scroll are even simpler than Markdown. For example, <i>the keyword for title is title</i>.</p>
 
@@ -312,8 +306,7 @@ code {
 
 <code class="scrollCodeBlockComponent">title My Snowball Cookies
 
-paragraph
- Bet you can't eat just one!
+* Bet you can't eat just one!
 
 recipe
  ingredients
@@ -324,7 +317,7 @@ recipe
  step Heat oven to 350 degrees
  step Bake for 10 minutes</code>
 
-<p class="scrollParagraphComponent">Notice that your post uses the keyword <code>recipe</code>, but Scroll does not have a keyword for that. No problem, just define it yourself using <a href="https://jtree.treenotation.org/designer/#standard%20grammar">Grammar</a>, extending your dialect of Scroll:</p>
+<p class="scrollParagraphComponent">Notice that your post uses the keyword <code<code>recipe</code</code>, but Scroll does not have a keyword for that. No problem, just define it yourself using <a href="https://jtree.treenotation.org/designer/#standard%20grammar">Grammar</a>, extending your dialect of Scroll:</p>
 
 <code class="scrollCodeBlockComponent">recipeNode
  extends abstractScrollNode
@@ -396,12 +389,12 @@ built by Scroll, looks like this:</p>
  settings.scroll
  anImageInTheArticle.png </code>
 
-<p class="scrollParagraphComponent">When you run <code>scroll build</code>, Scroll reads those files and generates
+<p class="scrollParagraphComponent">When you run <code<code>scroll build</code</code>, Scroll reads those files and generates
 the outputs right in that site's folder.</p>
 
 <p class="scrollParagraphComponent">With Scroll your site's Scroll files and static files and generated html
 are all in one public folder and checked into version control. Usually you
-want to add <code>*.html</code> and <code>feed.xml</code> to your <code>.gitignore</code>.
+want to add <code<code>*.html</code</code> and <code<code>feed.xml</code</code> to your <code<code>.gitignore</code</code>.
 </p>
 <h4 class="scrollQuestionComponent">How do I save drafts?</h4>
 
@@ -436,7 +429,7 @@ a single file tracked by git.</p>
 
 <h4 class="scrollQuestionComponent">Why does the default theme have a single page layout?</h4>
 
-<p class="scrollParagraphComponent">The default Scroll theme is designed to make it easier for <strong>syntopic reading</strong>. Being able to scan the page like a newspaper. This allows you to read at a higher level—to "get in the author's head"—compared to reading one article at a time from beginning to end.</p>
+<p class="scrollParagraphComponent">The default Scroll theme is designed to make it easier for <strong<strong>syntopic reading</strong</strong>. Being able to scan the page like a newspaper. This allows you to read at a higher level—to "get in the author's head"—compared to reading one article at a time from beginning to end.</p>
 
 <p class="scrollParagraphComponent">And if anyone prefers to read a scroll in a different way—they can! Scroll is for
 public domain sites. People are free to arrange the symbols any way they wish.</p>
@@ -546,15 +539,15 @@ goaccess /var/log/nginx/access.log -o /var/www/html/YOUR_SECRET_REPORT_URL.html 
 
 <h4 class="scrollQuestionComponent">Does Scroll support RSS?</h4>
 
-<p class="scrollParagraphComponent">Yes! Just create a <code>feed.scroll</code> file like <a href="https://github.com/breck7/scroll/blob/main/public/blog/feed.scroll">this</a>.</p>
+<p class="scrollParagraphComponent">Yes! Just create a <code<code>feed.scroll</code</code> file like <a href="https://github.com/breck7/scroll/blob/main/public/blog/feed.scroll">this</a>.</p>
 
 <h4 class="scrollQuestionComponent">Does Scroll support categories and category pages?</h4>
 
-<p class="scrollParagraphComponent">Yes! Just add your page to a category by using the <code>groups</code> keyword and then creating a <code>yourGroupName.scroll</code> page for the group. See a demo <a href="https://github.com/breck7/scroll/blob/main/public/blog/">here</a>.</p>
+<p class="scrollParagraphComponent">Yes! Just add your page to a category by using the <code<code>groups</code</code> keyword and then creating a <code<code>yourGroupName.scroll</code</code> page for the group. See a demo <a href="https://github.com/breck7/scroll/blob/main/public/blog/">here</a>.</p>
 
 <h4 class="scrollQuestionComponent">Does Scroll support Open Graph tags for better social media sharing?</h4>
 
-<p class="scrollParagraphComponent">Yes. By default the first image and first paragraph of an article will be used for the "og:" tags. Unfortunately <a href="https://cards-dev.twitter.com/validator">Twitter</a> doesn't support relative image links so you need to specify <code>baseUrl</code>. For more help check out the debuggers from <a href="https://developers.facebook.com/tools/debug">Facebook</a> and Twitter.</p>
+<p class="scrollParagraphComponent">Yes. By default the first image and first paragraph of an article will be used for the "og:" tags. Unfortunately <a href="https://cards-dev.twitter.com/validator">Twitter</a> doesn't support relative image links so you need to specify <code<code>baseUrl</code</code>. For more help check out the debuggers from <a href="https://developers.facebook.com/tools/debug">Facebook</a> and Twitter.</p>
 
 <h4 class="scrollQuestionComponent">Does Scroll support themes and templates?</h4>
 
@@ -618,7 +611,7 @@ node --cpu-prof --cpu-prof-name=scrollNodePerf.cpuprofile ~/scroll/scroll.js bui
    <a href="mailto:feedback@scroll.pub"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gmail icon</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></a>
    <a href="https://twitter.com/breckyunits"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Twitter icon</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
    <a href="https://github.com/breck7/scroll"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
-   <a href="https://scroll.pub" class="scrollCommunityLinkComponent">Built with Scroll v36.1.0</a>
+   <a href="https://scroll.pub" class="scrollCommunityLinkComponent">Built with Scroll v37.0.0</a>
 </div>
 </body>
 </html>

@@ -113,7 +113,7 @@ html {
   white-space: pre-line;
   border-left: .5em solid rgba(204,204,204,.8);
 }
-.scrollSectionComponent,.scrollSubsectionComponent {
+.scrollSectionComponent {
   text-align: center;
   margin-top: 1em;
 }
@@ -181,12 +181,6 @@ code {
 .scrollKpiTable span {
   font-size: 20p;;
   display: block;
-}
-.scrollUnorderedListComponent,.scrollOrderedListComponent {
-  text-align: left;
-  line-height: 1.4em;
-  padding-left: 1em;
-  margin-top: 0.4em;
 }
 .scrollFileViewSourceUrlComponent {
   text-align: center;
