@@ -280,13 +280,13 @@ code {
 <ul><li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed the original <code>aftertext</code> node in favor of <code><strong></code> nodes. Regex [search replace] to upgrade: <code>^aftertext\n </code> <code></strong> </code></p></li>
 <li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed basic <code>paragraph</code> node. Regex [search replace] to upgrade: <code>^paragraph\n </code> <code>* </code></p></li>
 <li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed basic <code>question</code> node. Regex [search replace] to upgrade: <code>^question </code> <code>? </code></p></li>
-<li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed basic <code>question</code> node. Regex [search replace] to upgrade: <code>^question </code> <code>? </code></p></li>
 <li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed basic <code>section</code> node. Regex [search replace] to upgrade: <code>^section </code> <code># </code></p></li>
 <li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed basic <code>subsection</code> node. Regex [search replace] to upgrade: <code>^subsection </code> <code>## </code></p></li>
 <li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed basic <code>list</code> node.</p></li>
 <li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed basic <code>orderedList</code> node.</p></li>
 <li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed basic <code>unorderedList</code> node.</p></li>
-<li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed support for 🔗 links.</p></li></ul>
+<li><p class="scrollParagraphComponent">⚠️ BREAKING: Removed support for 🔗 links. Regex [search replace] to upgrade: <code> ([^ ]+)🔗([^ ]+)</code> <code> <a href="https://$2">$1</a></code></p></li></ul>
+
 
 <p class="scrollParagraphComponent">The goal of this release is to simplify and speed up Scroll by removing legacy features.</p>
 <p class="scrollParagraphComponent">This is a major release that removes a bunch of the original keywords in favor of the newer more advanced aftertext nodes.</p>
