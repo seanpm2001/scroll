@@ -1,3 +1,10 @@
+<h1 class="scrollTitleComponent"><a href="feed.xml">The Kitchen Sink Blog</a></h1>
+
+
+
+
+
+
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <rss version="0.91">
 <channel>
@@ -6,11 +13,11 @@
  <description>Kitchen sink test site.</description>
  <language>en-us</language>
  <item>
-  <title>Top Sinks</title>
+  <title>The Kitchen Sink Blog</title>
   <link>https://scroll.pub/tests/kitchenSink/top-sinks.html</link>
  </item>
  <item>
-  <title>A review of my sink</title>
+  <title>The Kitchen Sink Blog</title>
   <link>https://scroll.pub/tests/kitchenSink/a-review-of-my-sink.html</link>
  </item>
 </channel>

@@ -1,3 +1,13 @@
+<h1 class="scrollTitleComponent"><a href="feed.xml">The Scroll Blog</a></h1>
+
+
+
+
+
+
+
+
+
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <rss version="0.91">
 <channel>
@@ -6,11 +16,11 @@
  <description>Official blog for Scroll</description>
  <language>en-us</language>
  <item>
-  <title>Introducing the Blink Tag</title>
+  <title>The Scroll Blog</title>
   <link>https://scroll.pub/public/blog/introducingBlink.html</link>
  </item>
  <item>
-  <title>The Power of Indented Heredocs: Markdown, Textile, and BBCode in one file with no escaping</title>
+  <title>The Scroll Blog</title>
   <link>https://scroll.pub/public/blog/indented-heredocs.html</link>
  </item>
 </channel>
