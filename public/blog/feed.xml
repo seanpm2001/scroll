@@ -274,7 +274,6 @@ code {
 
 
 
-
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <rss version="0.91">
 <channel>
@@ -283,7 +282,7 @@ code {
  <description>Official blog for Scroll</description>
  <language>en-us</language>
  <item>
-  <title>The Scroll Blog</title>
+  <title>Introducing the Blink Tag</title>
   <link>https://scroll.pub/public/blog/introducingBlink.html</link>
  </item>
  <item>
