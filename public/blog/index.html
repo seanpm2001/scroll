@@ -281,10 +281,63 @@ code {
 </div>
 
 <h1 class="scrollTitleComponent"><a href="index.html">The Official Scroll Blog</a></h1>
-<div class="scrollSnippetsComponent" style="column-width:35ch;">
- <div class="scrollSnippetContainerComponent"></div>
- <div class="scrollSnippetContainerComponent"></div>
-<a class="scrollContinueReadingLink" href="indented-heredocs.html">Continue reading...</a></div>
+<div class="scrollSnippetsComponent" style="column-width:35ch;" class="scrollSnippetContainerComponent" class="scrollSnippetContainerComponent">
+ <div></div>
+<h1 class="scrollTitleComponent"><a href="introducingBlink.html">Introducing the Blink Tag</a></h1>
+
+<h1 class="scrollTitleComponent"><a href="introducingBlink.html">The Scroll Blog</a></h1>
+
+
+
+
+
+
+
+
+
+<div class="scrollAuthor">by <a href="https://github.com/breck7">Breck Yunits</a></div>
+
+<span class="scrollBlink"><p class="scrollParagraphComponent"><span class="scrollDateComponent">October 2, 2022 — </span><strong>Scroll's new blink tag lets you call attention to something important</strong></p></span>
+  <script>
+  setInterval(()=>{
+      Array.from(document.getElementsByClassName("scrollBlink")).forEach(el => 
+      el.style.color = el.style.color === "white" ? "black" : "white"
+      )
+  }, 2000)
+  </script>
+
+<p class="scrollParagraphComponent">I am really happy with the current state of Scroll and so grateful for the many, many people who have helped us get it to this point, but I have had a feeling that we were missing something important and that's why not a lot of people have paid attention.</p>
+
+<span class="scrollBlink"><p class="scrollParagraphComponent"><strong>So I invented something simple and completely novel</strong></p></span>
+  <script>
+  setInterval(()=>{
+      Array.from(document.getElementsByClassName("scrollBlink")).forEach(el => 
+      el.style.color = el.style.color === "white" ? "black" : "white"
+      )
+  }, 2000)
+  </script>
+
+<p class="scrollParagraphComponent">Introducing the <code>blink</code> tag. When you have something important to say and you want to interupt people's lives, use the <code>blink</code> tag. It's as easy as this:</p>
+
+<code class="scrollCodeBlockComponent">blink This blinks</code>
+
+<p class="scrollParagraphComponent">Advertisers have known for ages that human eyes evolved to respond fast to motion. Now, using my new invention, the <code>blink</code> tag, you can bring this innovation from advertising to your products and websites.</p>
+
+<span class="scrollBlink"><p class="scrollParagraphComponent"><strong>The blink tag, available now in <a href="https://scroll.pub/">Scroll 34.1.0</a></strong></p></span>
+  <script>
+  setInterval(()=>{
+      Array.from(document.getElementsByClassName("scrollBlink")).forEach(el => 
+      el.style.color = el.style.color === "white" ? "black" : "white"
+      )
+  }, 2000)
+  </script>
+
+
+
+ <div></div>
+<h1 class="scrollTitleComponent"><a href="indented-heredocs.html">The Power of Indented Heredocs: Markdown, Textile, and BBCode in one file with no escaping</a></h1>
+<h1 class="scrollTitleComponent"><a href="indented-heredocs.html">The Scroll Blog</a></h1>
+<p class="scrollParagraphComponent"><span class="scrollDateComponent">August 23, 2021 — </span><a href="https://scroll.pub">Scroll</a> is a new language and static site generator that is mostly written in a new language called <a href="https://jtree.treenotation.org/designer/#standard%20grammar">Grammar</a> which are both built on a new syntax called <a href="https://treenotation.org">Tree Notation</a>.</p><a class="scrollContinueReadingLink" href="indented-heredocs.html">Continue reading...</a></div>
 
 <p class="scrollFileViewSourceUrlComponent">
  <a href="https://github.com/breck7/scroll/blob/main/public/blog/index.scroll">View source</a>
