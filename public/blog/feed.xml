@@ -14,14 +14,14 @@
 <html lang="en-US">
  <head>
   <meta charset="utf-8"></meta>
-  <title>The Scroll Blog</title>
+  <title></title>
   <meta name="viewport" content="width=device-width,initial-scale=1"></meta>
   <meta name="description" content="Official blog for Scroll"></meta>
   <meta name="generator" content="Scroll v45.0.0"></meta>
-  <meta property="og:title" content="The Scroll Blog"></meta>
+  <meta property="og:title" content=""></meta>
   <meta property="og:description" content="Official blog for Scroll"></meta>
   <meta property="og:image" content=""></meta>
-  <link rel="alternate" type="application/rss+xml" title="The Scroll Blog" href="feed.xml"></link>
+  <link rel="alternate" type="application/rss+xml" title="" href="feed.xml"></link>
   <meta name="twitter:card" content="summary_large_image"></meta>
   <style>html,body,div,span,h1,h2,h3,h4,p,ol,ul,table,figure {
   margin: 0;
@@ -264,7 +264,6 @@ code {
 </style>
 </head>
  <body>
-<h1 class="scrollTitleComponent"><a href="feed.xml">The Scroll Blog</a></h1>
 
 
 
@@ -276,7 +275,7 @@ code {
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <rss version="0.91">
 <channel>
- <title>The Scroll Blog</title>
+ <title></title>
  <link>https://scroll.pub/public/blog/</link>
  <description>Official blog for Scroll</description>
  <language>en-us</language>
@@ -285,7 +284,7 @@ code {
   <link>https://scroll.pub/public/blog/introducingBlink.html</link>
  </item>
  <item>
-  <title>The Scroll Blog</title>
+  <title>The Power of Indented Heredocs: Markdown, Textile, and BBCode in one file with no escaping</title>
   <link>https://scroll.pub/public/blog/indented-heredocs.html</link>
  </item>
 </channel>
