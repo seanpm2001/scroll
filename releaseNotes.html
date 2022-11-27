@@ -276,14 +276,14 @@ code {
  <a class="scrollNextPageLink" href="index.html">></a>
 </div>
 
-<div class="scrollColumnsComponent" style="column-width:35ch;">
 <h1 class="scrollTitleComponent"><a href="releaseNotes.html">Scroll Release Notes</a></h1>
+<div class="scrollColumnsComponent" style="column-width:35ch;">
 
 <p class="scrollParagraphComponent">Here's a list of the notable changes in Scroll.</p>
 
 <h3 class="scrollSectionComponent">46.0.0 11/27/2022</h3>
 
-<p class="scrollParagraphComponent">This is a major breaking refactor. All the <em>magical</em> imports are gone. This migration guide is a work in progress.</p>
+<p class="scrollParagraphComponent">This is a major breaking refactor. <strong>All the implicit imports are gone</strong>. Everything must be explicitly included now (perhaps with a few slight exceptions like meta tags). This migration guide is a work in progress.</p>
 
 <ul><li class="scrollParagraphComponent">⚠️ BREAKING: removed <code>maxColumns</code> and <code>columnWidth</code> and <code>template</code></li>
 <li class="scrollParagraphComponent">⚠️ BREAKING: headers and footers are not provided by default. You now must explicitly include them with <code>scrollHeader</code> and `scrollFooter.</li>
