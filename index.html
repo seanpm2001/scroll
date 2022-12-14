@@ -289,7 +289,7 @@ code {
 
 
 
-<p class="scrollParagraphComponent">Scroll is not just <a href="https://staticsitegenerators.net">another static site generator</a> but also a <strong<strong>new language</strong</strong>. More than just a new language. It's a <em<em>freakishly simple new language that you can extend in amazing ways</em</em>. Scroll is a high level language mostly written in a new lower level language called <a href="https://jtree.treenotation.org/designer/#standard%20grammar">Grammar</a>, and both Grammar and Scroll are built on the new syntax called <a href="https://treenotation.org">Tree Notation</a>.</p>
+<p class="scrollParagraphComponent">Scroll is not just <a href="https://staticsitegenerators.net">another static site generator</a> but also a <strong>new language</strong>. More than just a new language. It's a <em>freakishly simple new language that you can extend in amazing ways</em>. Scroll is a high level language mostly written in a new lower level language called <a href="https://jtree.treenotation.org/designer/#standard%20grammar">Grammar</a>, and both Grammar and Scroll are built on the new syntax called <a href="https://treenotation.org">Tree Notation</a>.</p>
 
 <p class="scrollParagraphComponent">The basics of Scroll are even simpler than Markdown. For example, <i>the keyword for title is title</i>.</p>
 
@@ -312,7 +312,7 @@ recipe
  step Heat oven to 350 degrees
  step Bake for 10 minutes</code>
 
-<p class="scrollParagraphComponent">Notice that your post uses the keyword <code<code>recipe</code</code>, but Scroll does not have a keyword for that. No problem, just define it yourself using <a href="https://jtree.treenotation.org/designer/#standard%20grammar">Grammar</a>, extending your dialect of Scroll:</p>
+<p class="scrollParagraphComponent">Notice that your post uses the keyword <code>recipe</code>, but Scroll does not have a keyword for that. No problem, just define it yourself using <a href="https://jtree.treenotation.org/designer/#standard%20grammar">Grammar</a>, extending your dialect of Scroll:</p>
 
 <code class="scrollCodeBlockComponent">recipeNode
  extends abstractScrollNode
@@ -384,12 +384,12 @@ built by Scroll, looks like this:</p>
  footer.scroll
  anImageInTheArticle.png </code>
 
-<p class="scrollParagraphComponent">When you run <code<code>scroll build</code</code>, Scroll reads those files and generates
+<p class="scrollParagraphComponent">When you run <code>scroll build</code>, Scroll reads those files and generates
 the outputs right in that site's folder.</p>
 
 <p class="scrollParagraphComponent">With Scroll your site's Scroll files and static files and generated html
 are all in one public folder and checked into version control. Usually you
-want to add <code<code>*.html</code</code> and <code<code>feed.xml</code</code> to your <code<code>.gitignore</code</code>.
+want to add <code>*.html</code> and <code>feed.xml</code> to your <code>.gitignore</code>.
 </p>
 <h4 class="scrollQuestionComponent">How do I save drafts?</h4>
 
@@ -424,7 +424,7 @@ a single file tracked by git.</p>
 
 <h4 class="scrollQuestionComponent">Why does the default theme have a single page layout?</h4>
 
-<p class="scrollParagraphComponent">The default Scroll theme is designed to make it easier for <strong<strong>syntopic reading</strong</strong>. Being able to scan the page like a newspaper. This allows you to read at a higher level—to "get in the author's head"—compared to reading one article at a time from beginning to end.</p>
+<p class="scrollParagraphComponent">The default Scroll theme is designed to make it easier for <strong>syntopic reading</strong>. Being able to scan the page like a newspaper. This allows you to read at a higher level—to "get in the author's head"—compared to reading one article at a time from beginning to end.</p>
 
 <p class="scrollParagraphComponent">And if anyone prefers to read a scroll in a different way—they can! Scroll is for
 public domain sites. People are free to arrange the symbols any way they wish.</p>
@@ -534,15 +534,15 @@ goaccess /var/log/nginx/access.log -o /var/www/html/YOUR_SECRET_REPORT_URL.html 
 
 <h4 class="scrollQuestionComponent">Does Scroll support RSS?</h4>
 
-<p class="scrollParagraphComponent">Yes! Just create a <code<code>feed.scroll</code</code> file like <a href="https://github.com/breck7/scroll/blob/main/public/blog/feed.scroll">this</a>.</p>
+<p class="scrollParagraphComponent">Yes! Just create a <code>feed.scroll</code> file like <a href="https://github.com/breck7/scroll/blob/main/public/blog/feed.scroll">this</a>.</p>
 
 <h4 class="scrollQuestionComponent">Does Scroll support categories and category pages?</h4>
 
-<p class="scrollParagraphComponent">Yes! Just add your page to a category by using the <code<code>groups</code</code> keyword and then creating a <code<code>yourGroupName.scroll</code</code> page for the group. See a demo <a href="https://github.com/breck7/scroll/blob/main/public/blog/">here</a>.</p>
+<p class="scrollParagraphComponent">Yes! Just add your page to a category by using the <code>groups</code> keyword and then creating a <code>yourGroupName.scroll</code> page for the group. See a demo <a href="https://github.com/breck7/scroll/blob/main/public/blog/">here</a>.</p>
 
 <h4 class="scrollQuestionComponent">Does Scroll support Open Graph tags for better social media sharing?</h4>
 
-<p class="scrollParagraphComponent">Yes. By default the first image and first paragraph of an article will be used for the "og:" tags. Unfortunately <a href="https://cards-dev.twitter.com/validator">Twitter</a> doesn't support relative image links so you need to specify <code<code>baseUrl</code</code>. For more help check out the debuggers from <a href="https://developers.facebook.com/tools/debug">Facebook</a> and Twitter.</p>
+<p class="scrollParagraphComponent">Yes. By default the first image and first paragraph of an article will be used for the "og:" tags. Unfortunately <a href="https://cards-dev.twitter.com/validator">Twitter</a> doesn't support relative image links so you need to specify <code>baseUrl</code>. For more help check out the debuggers from <a href="https://developers.facebook.com/tools/debug">Facebook</a> and Twitter.</p>
 
 <h4 class="scrollQuestionComponent">Does Scroll support themes and templates?</h4>
 
