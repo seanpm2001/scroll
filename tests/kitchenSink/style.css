@@ -15,6 +15,7 @@ html {
 }
 .scrollHeaderComponent svg {
   width: 30px;
+  height: 30px;
   fill: rgba(204,204,204,.8);
 }
 .scrollHeaderComponent svg:hover {
@@ -24,7 +25,7 @@ html {
   color: rgba(204,204,204,.8);
   position: absolute;
   font-size: 30px;
-  line-height: 30px;
+  line-height: 27px;
   text-decoration: none;
 }
 .scrollHeaderComponent a:hover {
@@ -52,6 +53,7 @@ html {
 }
 .scrollFooterComponent svg {
   width: 30px;
+  height: 30px;
   fill: rgba(204,204,204, .5);
   padding: 0 7px;
 }
