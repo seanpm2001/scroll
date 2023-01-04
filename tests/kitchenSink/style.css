@@ -116,6 +116,10 @@ html {
 }
 .scrollNoteLink {
   text-decoration: none;
+  opacity: .4;
+}
+.scrollNoteIndex {
+  text-decoration: none;
 }
 code {
   font-size: 90%;
