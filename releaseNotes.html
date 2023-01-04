@@ -241,7 +241,7 @@ code {
 .scrollKeyboardNav {
   display: none;
 }
-.scrollCaveat {
+.scrollHoverNote {
   text-decoration: underline dashed 1px rgba(0,0,0,.1);
   cursor: default;
 }
@@ -270,6 +270,11 @@ code {
 <div class="scrollColumnsComponent" style="column-width:35ch;column-count:10;max-width:530ch;">
 
 <p class="scrollParagraphComponent">Here's a list of the notable changes in Scroll.</p>
+
+<h3 class="scrollSectionComponent">49.0.0 1/4/2023</h3>
+<ul><li class="scrollParagraphComponent">⚠️ BREAKING: renamed <code>footnote</code> and <code>caveat</code> directives to <code>hoverNote</code> to avoid confusion with footnotes.</li>
+<li class="scrollParagraphComponent">⚠️ BREAKING: removed <code>startRuledColumns</code> which doesn't appear to be used anywhere</li>
+<li class="scrollParagraphComponent">🏥 general code cleanup and refactor by splitting big grammar files into separate files.</li></ul>
 
 <h3 class="scrollSectionComponent">48.3.0 1/2/2023</h3>
 <ul><li class="scrollParagraphComponent">🎉 added <code>youTube</code> keyword for embedding youTube videos with proper responsive sizing.</li></ul>
@@ -498,10 +503,10 @@ rssFeedUrl feed.xml</code>
 <h3 class="scrollSectionComponent">31.4.0 2022.9.3</h3>
 <ul><li class="scrollParagraphComponent">🎉 New keywords: <code>*</code>, <code>footnote</code>, and <code>readingList</code></li></ul>
 
-<p class="scrollParagraphComponent">This is a <em>thought</em>. It's like a condensed form of aftertext with <strong>bold</strong> and <em>italics</em> and <code>code</code> turned on by <span class="scrollCaveat" title="And it supports footnotes!">default</span>.</p>
+<p class="scrollParagraphComponent">This is a <em>thought</em>. It's like a condensed form of aftertext with <strong>bold</strong> and <em>italics</em> and <code>code</code> turned on by <span class="scrollHoverNote" title="And it supports hover notes!">default</span>.</p>
 <code class="scrollCodeBlockComponent">* This is a _thought_. It's like a condensed form of aftertext with *bold* and _italics_ and `code` turned on by default.
- footnote default
-  And it supports footnotes!</code>
+ hoverNote default
+  And it supports hover notes!</code>
 
 <h3 class="scrollSectionComponent">Projects list</h3>
 
@@ -733,9 +738,9 @@ Show some <span style="color:green">added text</span> or some <span style="color
 
 <h4 class="scrollSectionComponent">Caveat Example</h4>
 
-<p class="scrollParagraphComponent">This is a <span class="scrollCaveat" title="I'm not actually sure if this is a great idea. But often I want to include a comment and link it back to the text, but don't quite want to footnote it.">great</span> idea.</p>
+<p class="scrollParagraphComponent">This is a <span class="scrollHoverNote" title="I'm not actually sure if this is a great idea. But often I want to include a comment and link it back to the text, but don't quite want to footnote it.">great</span> idea.</p>
 <code class="scrollCodeBlockComponent">* This is a great idea.
- caveat great
+ hoverNote great
   I'm not actually sure if this is a great idea. But often I want to include a comment and link it
   back to the text, but don't quite want to footnote it.</code>
 
