@@ -237,15 +237,15 @@ code {
   color: white;
   background: rgb(0,132,255);
 }
-.scrollImageComponent {
+.scrollCaptionedComponent {
   display: block;
   text-align: center;
 }
-.scrollImageComponent img {
+.scrollCaptionedComponent img {
   max-width: 98%;
   height: auto;
 }
-.scrollImageComponent figcaption {
+.scrollCaptionedComponent figcaption {
   font-style: italic;
 }
 .scrollKeyboardNav {
@@ -449,7 +449,7 @@ replace # $1 $4.$2.$3</code>
 <div class="scrollSectionComponent"><h3 class="scrollParagraphComponent">40.0.0 2022.11.05</h3>
 <ul><li class="scrollParagraphComponent">⚠️ BREAKING: (no one should be affected) <code>caption</code> now extends the thought (<code>*</code>) node.</li></ul>
 </div>
-<figure class="scrollImageComponent"><a href="public/screenshot.png" target="_blank"><img src="public/screenshot.png" width="300" height="211" loading="lazy"></a><figcaption><p class="scrollParagraphComponent">You can now use all aftertext directives like <strong>bold</strong> in caption nodes. Note: in the future we may just remove the keyword <code>caption</code> and you can just use <code>*</code> directly.</p></figcaption></figure>
+<figure class="scrollCaptionedComponent"><a href="public/screenshot.png" target="_blank"><img src="public/screenshot.png" width="300" height="211" loading="lazy"></a><figcaption><p class="scrollParagraphComponent">You can now use all aftertext directives like <strong>bold</strong> in caption nodes. Note: in the future we may just remove the keyword <code>caption</code> and you can just use <code>*</code> directly.</p></figcaption></figure>
 
 <div class="scrollSectionComponent"><h3 class="scrollParagraphComponent">39.0.0 2022.11.03</h3>
 <ul><li class="scrollParagraphComponent">⚠️ BREAKING: <code>scroll init</code> no longer creates a <code>feed.xml</code> file by default. You can easily add an XML feed manually with the 2 steps below:</li></ul>
@@ -902,7 +902,7 @@ loremIpsum 20</code>
 <div class="scrollSectionComponent"><h3 class="scrollParagraphComponent">22.4.0 2021.11.25</h3>
 <ul><li class="scrollParagraphComponent">🎉 add basic caption support to images</li></ul>
 </div>
-<figure class="scrollImageComponent"><a href="public/screenshot.png" target="_blank"><img src="public/screenshot.png" width="300" height="211" loading="lazy"></a><figcaption><p class="scrollParagraphComponent">This is a caption</p></figcaption></figure>
+<figure class="scrollCaptionedComponent"><a href="public/screenshot.png" target="_blank"><img src="public/screenshot.png" width="300" height="211" loading="lazy"></a><figcaption><p class="scrollParagraphComponent">This is a caption</p></figcaption></figure>
 <code class="scrollCodeBlockComponent">image public/screenshot.png
  caption This is a caption</code>
 
