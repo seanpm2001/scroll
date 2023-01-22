@@ -277,16 +277,8 @@ code {
 </div>
 
 <h1 class="scrollTitleComponent"><a href="index.html">📜 Scroll: tools for thought.</a></h1>
-<div class="scrollColumnsComponent" style="column-width:35ch;column-count:10;max-width:530ch;">
 
-<div class="scrollKeyboardNav"><a href="releaseNotes.html">releaseNotes.html</a> · index.html · <a href="releaseNotes.html">releaseNotes.html</a><script>document.addEventListener('keydown', function(event) {
-  if (document.activeElement !== document.body) return
-  const getLinks = () => document.getElementsByClassName("scrollKeyboardNav")[0].getElementsByTagName("a")
-  if (event.key === "ArrowLeft")
-    getLinks()[0].click()
-  else if (event.key === "ArrowRight")
-    getLinks()[1].click()
- });</script></div>
+<div class="scrollColumnsComponent" style="column-width:35ch;column-count:10;max-width:530ch;">
 
 <a href="https://github.com/breck7/scroll/actions/workflows/didTheTestsPass.yml"><img src="https://github.com/breck7/scroll/actions/workflows/didTheTestsPass.yml/badge.svg" style="width: 49%;"/></a> <a href="https://gitpod.io/#https://github.com/breck7/scroll"><img style="width: 49%;" src="https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod"/></a>
 
@@ -537,6 +529,16 @@ node --cpu-prof --cpu-prof-name=scrollNodePerf.cpuprofile ~/scroll/scroll.js bui
 </div>
 </div>
 
+
+
+<div class="scrollKeyboardNav"><a href="releaseNotes.html">releaseNotes.html</a> · index.html · <a href="releaseNotes.html">releaseNotes.html</a><script>document.addEventListener('keydown', function(event) {
+  if (document.activeElement !== document.body) return
+  const getLinks = () => document.getElementsByClassName("scrollKeyboardNav")[0].getElementsByTagName("a")
+  if (event.key === "ArrowLeft")
+    getLinks()[0].click()
+  else if (event.key === "ArrowRight")
+    getLinks()[1].click()
+ });</script></div>
 </div><p class="scrollFileViewSourceUrlComponent doNotPrint">
  <a href="https://github.com/breck7/scroll/blob/main/readme.scroll">View source</a>
 </p>
