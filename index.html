@@ -415,6 +415,9 @@ npm install -g .</code>
 <div class="scrollSectionComponent"><h4 class="scrollQuestionComponent">Is there a place I can play with the Scroll grammar?</h4>
 <p class="scrollParagraphComponent">Yes. In the <a href="https://jtree.treenotation.org/designer#url%20https%3A%2F%2Ftry.scroll.pub%2FscrollScript.grammar">Tree Language Designer</a>.</p>
 </div>
+<div class="scrollSectionComponent"><h4 class="scrollQuestionComponent">How do I recursively build multiple scrolls in child folders?</h4>
+<code class="scrollCodeBlockComponent">scroll list | scroll build</code>
+</div>
 <div class="scrollSectionComponent"><h4 class="scrollQuestionComponent">What's an easy way to have GitHub run Scroll and build my HTML files automatically?</h4>
 <p class="scrollParagraphComponent">Go to your project folder and create the file below:</p>
 <code class="scrollCodeBlockComponent">mkdir -p .github/workflows
@@ -434,8 +437,8 @@ jobs:
         uses: actions/checkout@v2.3.1
       - name: Install and Build
         run: |
-          npm install scroll-cli
-          ./node_modules/scroll-cli/scroll.js build
+          npm install -g scroll-cli
+          scroll build
           # Uncomment the line below if you are ignoring *.html files in your gitignore file
           # rm .gitignore
       - name: Deploy 🚀
