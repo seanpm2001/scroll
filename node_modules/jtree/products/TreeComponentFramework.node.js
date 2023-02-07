@@ -125,9 +125,7 @@ class AbstractWillowShadow {
     return this
   }
   getShadowParent() {
-    return this.getShadowStumpNode()
-      .getParent()
-      .getShadow()
+    return this.getShadowStumpNode().parent.getShadow()
   }
   getPositionAndDimensions(gridSize = 1) {
     const offset = this.getShadowOffset()
@@ -407,12 +405,12 @@ class AbstractWillowBrowser extends stumpNode {
   getWindowTitle() {
     // todo: deep getNodeByBase/withBase/type/word or something?
     const nodes = this.getTopDownArray()
-    const titleNode = nodes.find(node => node.getFirstWord() === WillowConstants.titleTag)
-    return titleNode ? titleNode.getContent() : ""
+    const titleNode = nodes.find(node => node.firstWord === WillowConstants.titleTag)
+    return titleNode ? titleNode.content : ""
   }
   setWindowTitle(value) {
     const nodes = this.getTopDownArray()
-    const headNode = nodes.find(node => node.getFirstWord() === WillowConstants.tags.head)
+    const headNode = nodes.find(node => node.firstWord === WillowConstants.tags.head)
     headNode.touchNode(WillowConstants.titleTag).setContent(value)
     return this
   }
@@ -973,7 +971,7 @@ class AbstractTreeComponent extends GrammarBackedNode {
   _getHtmlOnlyNodes() {
     const nodes = []
     this.willowBrowser.getHtmlStumpNode().deepVisit(node => {
-      if (node.getFirstWord() === "styleTag" || (node.getContent() || "").startsWith("<svg ")) return false
+      if (node.firstWord === "styleTag" || (node.content || "").startsWith("<svg ")) return false
       nodes.push(node)
     })
     return nodes
@@ -982,7 +980,7 @@ class AbstractTreeComponent extends GrammarBackedNode {
     // todo: cleanup. feels hacky.
     const clone = new TreeNode(this.willowBrowser.getHtmlStumpNode().toString())
     clone.getTopDownArray().forEach(node => {
-      if (node.getFirstWord() === "styleTag" || (node.getContent() || "").startsWith("<svg ")) node.destroy()
+      if (node.firstWord === "styleTag" || (node.content || "").startsWith("<svg ")) node.destroy()
     })
     return clone.toString()
   }
@@ -1004,7 +1002,7 @@ class AbstractTreeComponent extends GrammarBackedNode {
     this._onCommandWillRun() // todo: remove. currently used by ohayo
     let treeComponent = stumpNode.getStumpNodeTreeComponent()
     while (!treeComponent[commandMethod]) {
-      const parent = treeComponent.getParent()
+      const parent = treeComponent.parent
       if (parent === treeComponent) throw new Error(`Unknown command "${commandMethod}"`)
       if (!parent) debugger
       treeComponent = parent
@@ -1066,7 +1064,7 @@ class AbstractTreeComponent extends GrammarBackedNode {
   toggleTreeComponentFrameworkDebuggerCommand() {
     // todo: move somewhere else?
     // todo: cleanup
-    const app = this.getRootNode()
+    const app = this.root
     const node = app.getNode("TreeComponentFrameworkDebuggerComponent")
     if (node) {
       node.unmountAndDestroy()
@@ -1082,7 +1080,7 @@ class AbstractTreeComponent extends GrammarBackedNode {
     return ""
   }
   getTheme() {
-    if (!this.isRoot()) return this.getRootNode().getTheme()
+    if (!this.isRoot()) return this.root.getTheme()
     if (!this._theme) this._theme = new DefaultTheme()
     return this._theme
   }
@@ -1194,7 +1192,7 @@ ${new stumpNode(this.toStumpCode()).compile()}
     return reasonForUpdatingOrNot
   }
   _updateHtml() {
-    const stumpNodeToMountOn = this._htmlStumpNode.getParent()
+    const stumpNodeToMountOn = this._htmlStumpNode.parent
     const currentIndex = this._htmlStumpNode.getIndex()
     this._removeHtml()
     this._mountHtml(stumpNodeToMountOn, this._toLoadedOrLoadingStumpCode(), currentIndex)
@@ -1207,7 +1205,7 @@ ${new stumpNode(this.toStumpCode()).compile()}
   toggle(firstWord, contentOptions) {
     const currentNode = this.getNode(firstWord)
     if (!contentOptions) return currentNode ? currentNode.unmountAndDestroy() : this.appendLine(firstWord)
-    const currentContent = currentNode === undefined ? undefined : currentNode.getContent()
+    const currentContent = currentNode === undefined ? undefined : currentNode.content
     const index = contentOptions.indexOf(currentContent)
     const newContent = index === -1 || index + 1 === contentOptions.length ? contentOptions[0] : contentOptions[index + 1]
     this.delete(firstWord)
@@ -1219,7 +1217,7 @@ ${new stumpNode(this.toStumpCode()).compile()}
   }
   toggleAndRender(firstWord, contentOptions) {
     this.toggle(firstWord, contentOptions)
-    this.getRootNode().renderAndGetRenderReport()
+    this.root.renderAndGetRenderReport()
   }
   _getFirstOutdatedDependency(lastRenderedTime = this._getLastRenderedTime() || 0) {
     return this.getDependencies().find(dep => dep.getLineModifiedTime() > lastRenderedTime)
@@ -1266,7 +1264,7 @@ ${new stumpNode(this.toStumpCode()).compile()}
     })
   }
   toStumpLoadingCode() {
-    return `div Loading ${this.getFirstWord()}...
+    return `div Loading ${this.firstWord}...
  class ${this.getCssClassNames().join(" ")}
  id ${this.getTreeComponentId()}`
   }
@@ -1308,7 +1306,7 @@ ${new stumpNode(this.toStumpCode()).compile()}
  bern${TreeNode.nest(css, 2)}`)
   }
   _getPageHeadStump() {
-    return this.getRootNode().willowBrowser.getHeadStumpNode()
+    return this.root.willowBrowser.getHeadStumpNode()
   }
   _removeCss() {
     if (!this._cssStumpNode) return this
@@ -1373,7 +1371,7 @@ class TreeComponentFrameworkDebuggerComponent extends AbstractTreeComponent {
   opacity 1`
   }
   toStumpCode() {
-    const app = this.getRootNode()
+    const app = this.root
     return `div
  class TreeComponentFrameworkDebuggerComponent
  div x

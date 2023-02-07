@@ -31,7 +31,7 @@
       const testBlocks = {}
       this.getChildInstancesOfNodeTypeId("abstractTestBlockNode").forEach(testNode => {
         const prefix = testNode.racerPrefix || ""
-        testBlocks[prefix + testNode.getContent()] = testNode.toTestRacerFunction(filepath)
+        testBlocks[prefix + testNode.content] = testNode.toTestRacerFunction(filepath)
       })
       const files = {}
       files[filepath] = testBlocks
@@ -95,7 +95,7 @@ swarmNode
    const testBlocks = {}
    this.getChildInstancesOfNodeTypeId("abstractTestBlockNode").forEach(testNode => {
     const prefix = testNode.racerPrefix || ""
-    testBlocks[prefix + testNode.getContent()] = testNode.toTestRacerFunction(filepath)
+    testBlocks[prefix + testNode.content] = testNode.toTestRacerFunction(filepath)
    })
    const files = {}
    files[filepath] = testBlocks
@@ -116,7 +116,7 @@ abstractAssertionNode
    this.getAssertionResult(actualAsString, expected, this.getLine())
   }
   equal(actual, expected, message) {
-   this.getParent().getEqualFn()(actual, expected, message)
+   this.parent.getEqualFn()(actual, expected, message)
   }
   getAssertionResult(actualAsString, expected, message) {
    this.equal(actualAsString, expected, message)
@@ -136,7 +136,7 @@ abstractAssertionNode
    return this.getWordsFrom(2).join(" ")
   }
   getSyncExpected() {
-   return this.getContent()
+   return this.content
   }
  cells assertionKeywordCell
 assertParagraphIsNode
@@ -220,7 +220,7 @@ abstractTestBlockNode
  catchAllCellType anyCell
  javascript
   getArrangeNode() {
-   return this.getNode("arrange") || this.getParent().getArrangeNode()
+   return this.getNode("arrange") || this.parent.getArrangeNode()
   }
   setEqualMethod(equal) {
    this._equal = equal
@@ -283,7 +283,7 @@ arrangeNode
     // todo: cleanup
    let requiredClass =
     this.get("require") ||
-    this.getRootNode()
+    this.root
      .getNode("arrange")
      .get("require")
    const requiredClassParts = requiredClass.split(" ") // Allows for ./ExportsClasses.js ChildClass
@@ -313,7 +313,7 @@ withParagraphNode
 actNode
  javascript
   getTestBlock() {
-   return this.getParent()
+   return this.parent
   }
   getEqualFn() {
    return this.getTestBlock().getEqualFn()
@@ -324,10 +324,10 @@ actNode
    return this.getWordsFrom(1)
   }
   _act(arrangedInstance) {
-   const actionMethodName = this.getFirstWord()
+   const actionMethodName = this.firstWord
    const actionMethod = arrangedInstance[actionMethodName]
    if (!actionMethod) throw new Error(\`No method "\${actionMethodName}" on "\${arrangedInstance.constructor.name}"\`)
-   if (typeof actionMethod !== "function") throw new Error(\`"\${actionMethodName}" on "\${arrangedInstance.constructor.name}" is a property not a method\`)
+   if (typeof actionMethod !== "function") return arrangedInstance[actionMethodName] // Property access
    return actionMethod.apply(arrangedInstance, this._getActArgs())
   }
   async execute(arrangedInstance) {
@@ -412,7 +412,7 @@ todoNode
       this.getAssertionResult(actualAsString, expected, this.getLine())
     }
     equal(actual, expected, message) {
-      this.getParent().getEqualFn()(actual, expected, message)
+      this.parent.getEqualFn()(actual, expected, message)
     }
     getAssertionResult(actualAsString, expected, message) {
       this.equal(actualAsString, expected, message)
@@ -432,7 +432,7 @@ todoNode
       return this.getWordsFrom(2).join(" ")
     }
     getSyncExpected() {
-      return this.getContent()
+      return this.content
     }
   }
 
@@ -542,7 +542,7 @@ todoNode
       return this.getWordsFrom(1)
     }
     getArrangeNode() {
-      return this.getNode("arrange") || this.getParent().getArrangeNode()
+      return this.getNode("arrange") || this.parent.getArrangeNode()
     }
     setEqualMethod(equal) {
       this._equal = equal
@@ -623,11 +623,7 @@ todoNode
     }
     _getRequiredClass(programFilepath) {
       // todo: cleanup
-      let requiredClass =
-        this.get("require") ||
-        this.getRootNode()
-          .getNode("arrange")
-          .get("require")
+      let requiredClass = this.get("require") || this.root.getNode("arrange").get("require")
       const requiredClassParts = requiredClass.split(" ") // Allows for ./ExportsClasses.js ChildClass
       const requiredFileNameOrClass = requiredClassParts[0]
       let theClass
@@ -675,7 +671,7 @@ todoNode
       return this.getWordsFrom(1)
     }
     getTestBlock() {
-      return this.getParent()
+      return this.parent
     }
     getEqualFn() {
       return this.getTestBlock().getEqualFn()
@@ -686,10 +682,10 @@ todoNode
       return this.getWordsFrom(1)
     }
     _act(arrangedInstance) {
-      const actionMethodName = this.getFirstWord()
+      const actionMethodName = this.firstWord
       const actionMethod = arrangedInstance[actionMethodName]
       if (!actionMethod) throw new Error(`No method "${actionMethodName}" on "${arrangedInstance.constructor.name}"`)
-      if (typeof actionMethod !== "function") throw new Error(`"${actionMethodName}" on "${arrangedInstance.constructor.name}" is a property not a method`)
+      if (typeof actionMethod !== "function") return arrangedInstance[actionMethodName] // Property access
       return actionMethod.apply(arrangedInstance, this._getActArgs())
     }
     async execute(arrangedInstance) {
