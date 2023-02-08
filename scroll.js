@@ -395,7 +395,7 @@ class ScrollFile {
 	}
 
 	_compiledSnippet = ""
-	get compiledSnippet() {
+	getCompiledSnippet() {
 		if (!this._compiledSnippet) this._compiledSnippet = this.scrollScriptProgram.compileSnippet() + this.viewSourceHtml
 		return this._compiledSnippet
 	}
@@ -411,18 +411,22 @@ class ScrollFile {
 		return this.compiled.trim()
 	}
 
-	get htmlCodeForSnippetsPage() {
+	get relativePath() {
+		return this.folder.relativePath
+	}
+
+	getHtmlCodeForSnippetsPage() {
 		const snippetBreakNode = this.scrollScriptProgram.getNode(scrollKeywords.endSnippet)
-		if (!snippetBreakNode) return this.compiledSnippet
+		if (!snippetBreakNode) return this.getCompiledSnippet()
 		const indexOfBreak = snippetBreakNode.getIndex()
 
-		const { scrollScriptProgram, permalink } = this
+		const { scrollScriptProgram, permalink, relativePath } = this
 		const joinChar = scrollScriptProgram._getChildJoinCharacter()
 		const html =
 			scrollScriptProgram
 				.map((child, index) => (index >= indexOfBreak ? "" : child.compileSnippet ? child.compileSnippet() : child.compile()))
 				.filter(i => i)
-				.join(joinChar) + `<a class="scrollContinueReadingLink" href="${permalink}">Continue reading...</a>`
+				.join(joinChar) + `<a class="scrollContinueReadingLink" href="${relativePath + permalink}">Continue reading...</a>`
 
 		return html + this.viewSourceHtml
 	}
@@ -448,8 +452,26 @@ class ScrollFolder {
 		this.folder = path.normalize(folder)
 	}
 
+	relativePath = ""
+
 	getGroup(groupName) {
 		return this.files.filter(file => file.shouldBuild && file.groups.includes(groupName))
+	}
+
+	getFilesInGroups(groupNames) {
+		let arr = []
+		groupNames.forEach(name => {
+			if (!name.includes("/")) return (arr = arr.concat(this.getGroup(name)))
+			const parts = name.split("/")
+			const group = parts.pop()
+			const relativePath = parts.join("/")
+			const folderPath = path.join(this.folder, path.normalize(relativePath))
+			const folder = new ScrollFolder(folderPath)
+			folder.relativePath = relativePath + "/"
+			arr = arr.concat(folder.getGroup(group))
+		})
+
+		return lodash.sortBy(arr, file => file.timestamp).reverse()
 	}
 
 	get grammarErrors() {

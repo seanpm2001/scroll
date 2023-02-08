@@ -1,16 +1,10 @@
-<h1 class="scrollTitleComponent"><a href="feed.xml">The Kitchen Sink Blog</a></h1>
-
-
-
-
-
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <rss version="2.0">
 <channel>
- <title>The Kitchen Sink Blog</title>
+ <title></title>
  <link>https://scroll.pub/tests/kitchenSink/</link>
  <description>Kitchen sink test site.</description>
- <lastBuildDate>Wed, 08 Feb 2023 03:57:42 +0000</lastBuildDate>
+ <lastBuildDate>Wed, 08 Feb 2023 22:15:24 +0000</lastBuildDate>
  <language>en-us</language>
  <item>
   <title>Top Sinks</title>
