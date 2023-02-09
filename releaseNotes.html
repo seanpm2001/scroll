@@ -300,7 +300,8 @@ css .blueOneLiner { color: blue;}</code>
 <ul><li >🎉 <code>title</code> nodes are now proper aftertext nodes and can use all features of aftertext</li>
 <li >🎉 the <code>hidden</code> keyword can now be used on any aftertext node</li>
 <li >🏥 if there is no <code>permalink</code> on a file the <code>title</code> node won't output an a tag</li>
-<li >⚠️ BREAKING: (no one should be affected). If you had put markup directives in your title tags, such as <strong>bolds</strong>, those will now actually be evaluated.</li></ul>
+<li >⚠️ BREAKING: (no one should be affected). If you had put markup directives in your title tags, such as <strong>bolds</strong>, those will now actually be evaluated.</li>
+<li >⚠️ BREAKING: <code>title</code> blocks now start a section like <code>#</code> and <code>##</code>, so you may need to add an empty line to end the section, for example if you previously had a <code>startColumns</code> right after the title tag.</li></ul>
 
 <div class="scrollSectionComponent"><h3 class="scrollParagraphComponent">56.1.0 2/8/2023</h3>
 <ul><li >🎉 <code>snippets</code> nodes can now accept multiple groups and also groups can be in different folders. Syntax is <code>[folderPath]/[groupName]</code> For example:</li></ul>
