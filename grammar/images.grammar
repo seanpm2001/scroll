@@ -19,9 +19,9 @@ imageNode
  javascript
   get figureContent() {
    const file = this.root.file
-   const folder = file.folder.folder
+   const folder = file.folder
    const src = this.getWord(1)
-   const {relativePath} = file
+   const { relativePath } = folder
    let dimensionAttributes = ""
    // If its a local image, get the dimensions and put them in the HTML
    // to avoid flicker
@@ -29,7 +29,7 @@ imageNode
     try {
      const sizeOf = require("image-size")
      const path = require("path")
-     const dimensions = sizeOf(path.join(folder, src))
+     const dimensions = sizeOf(path.join(folder.folder, src))
      const width = dimensions.width
      const height = dimensions.height
      dimensionAttributes = `width="${width}" height="${height}" `
