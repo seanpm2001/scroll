@@ -330,7 +330,11 @@ code {
 <p class="scrollParagraphComponent">Here's a list of the notable changes in Scroll.</p>
 
 <div class="scrollSectionComponent"><h3 class="scrollParagraphComponent">63.0.0 3/27/2023</h3>
-<ul style="text-indent:0px;"><li >⚠️ BREAKING: (only users using Scroll as a module are affected). Removed ScrollFolder. Exports now include ScrollDiskFileSystem and ScrollInMemoryFileSystem. To get the same behavior as <code>new ScrollFolder("folder").buildFiles()</code> use <code>new ScrollDiskFileSystem().buildFilesInFolder("folder")</code>.</li></ul>
+<p class="scrollParagraphComponent">This was a big internal refactor to remove the outdated concept of <code>ScrollFolder</code> and rely on the file system parameter instead. This makes it easier to build webapps serving dynamic Scroll pages. It also simplifies the upcoming isomorphic release.</p>
+<ul style="text-indent:0px;"><li >⚠️ BREAKING: Only users using Scroll as a module may be affected:</li><ul style="text-indent:20px;"><li >Removed <code>ScrollFolder</code>. Exports now include <code>ScrollDiskFileSystem</code> and <code>ScrollInMemoryFileSystem</code>. To get the same behavior as <code>new ScrollFolder("folder").buildFiles()</code> use <code>new ScrollDiskFileSystem().buildFilesInFolder("folder")</code>.</li>
+<li >Instead of <code>new ScrollFolder(__dirname).defaultScrollCompiler</code> use <code>DefaultScrollCompiler</code></li></ul>
+<li >⚠️ BREAKING: Only users using Scroll extensions may be affected:</li><ul style="text-indent:20px;"><li >In extensions <code>compileSnippet</code> should now be <code>compileEmbeddedVersion</code></li>
+<li >Instead of <code>file.folder.folder</code> use <code>file.folderPath</code></li></ul></ul>
 </div>
 <div class="scrollSectionComponent"><h3 class="scrollParagraphComponent">62.5.1 3/27/2023</h3>
 <ul style="text-indent:0px;"><li >🏥 if something goes wrong in a nodejs block, be sure to clean up the temporary file</li></ul>
