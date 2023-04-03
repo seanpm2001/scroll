@@ -32,89 +32,11 @@ html {
   font-size: 14px;
   hyphens: auto;
 }
-.scrollHeaderComponent svg {
-  width: 30px;
-  height: 30px;
-  fill: rgba(204,204,204,.8);
-}
-.scrollHeaderComponent svg:hover {
-  fill: #333;
-}
-.scrollHeaderComponent a {
-  color: rgba(204,204,204,.8);
-  position: absolute;
-  font-size: 30px;
-  line-height: 27px;
-  text-decoration: none;
-}
-.scrollHeaderComponent a:hover {
-  color: #333;
-}
-.scrollHeaderComponent .scrollTopLeftBarComponent {
-  text-align: left;
-  left: 25px;
-}
-.scrollHeaderComponent .scrollTopRightBarComponent {
-  text-align: right;
-  right: 25px;
-}
-.scrollHeaderComponent a.scrollPrevPageLink {
-  left: 3px;
-}
-.scrollHeaderComponent a.scrollNextPageLink {
-  right: 3px;
-}
-.scrollFooterComponent {
-  margin-top: 8px;
-  padding-top: 8px;
-  text-align: center;
-}
-.scrollFooterComponent svg {
-  width: 30px;
-  height: 30px;
-  fill: rgba(204,204,204, .5);
-  padding: 0 7px;
-}
-.scrollFooterComponent svg:hover {
-  fill: #333;
-}
-.scrollCommunityLinkComponent {
-  display: block;
-  font-family: Verdana;
-  font-weight: 100;
-  margin: .5em;
-  color: rgba(204,204,204,.5);
-}
-.scrollColumnsComponent {
-  column-count: auto;
-  column-fill: balance;
-  column-width: 35ch;
-  column-gap: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: auto;
-}
-.scrollSnippetContainerComponent {
-  padding: 1ch 0;
-  break-inside: avoid;
-  text-align: justify;
-}
-.scrollTitleComponent {
-  text-align: center;
-  margin-bottom: .25em;
-}
-.scrollTitleComponent a {
-  color: #000;
-}
-.scrollDateComponent {
-  font-style: italic;
-  font-size: 80%;
-}
-.scrollParagraphComponent {
+p {
   margin-top: 0.4em;
   line-height: 1.4em;
 }
-.scrollQuoteComponent {
+.scrollQuote {
   break-inside: avoid;
   display: block;
   margin: .5em 0;
@@ -123,30 +45,59 @@ html {
   white-space: pre-line;
   border-left: .5em solid rgba(204,204,204,.8);
 }
-.scrollSectionComponent {
-  break-inside: avoid;
-}
-.scrollSectionComponent h3 {
-  margin-top: 1em;
-  text-align: center;
-}
-.scrollSectionComponent h4 {
-  margin-top: 1em;
-  text-align: center;
-}
-h4.scrollQuestionComponent {
-  text-align: left;
-}
-.scrollNoteLink {
-  opacity: .4;
-}
 code {
   font-size: 90%;
   background-color: rgba(204,204,204,.5);
   padding: 2px 4px;
   border-radius: 4px;
 }
-.scrollCodeBlockComponent {
+.scrollColumns {
+  column-count: auto;
+  column-fill: balance;
+  column-width: 35ch;
+  column-gap: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: auto;
+}
+.scrollSnippetContainer {
+  padding: 1ch 0;
+  break-inside: avoid;
+  text-align: justify;
+}
+.scrollTitle {
+  text-align: center;
+  margin-bottom: .25em;
+}
+.scrollTitle a {
+  color: #000;
+}
+.scrollDateline {
+  font-style: italic;
+  font-size: 80%;
+}
+.scrollSection {
+  break-inside: avoid;
+}
+.scrollSection h3 {
+  margin-top: 1em;
+  text-align: center;
+}
+.scrollSection h4 {
+  margin-top: 1em;
+  text-align: center;
+}
+h4.scrollQuestion {
+  text-align: left;
+}
+.scrollNoteLink {
+  opacity: .4;
+}
+.scrollHoverNote {
+  text-decoration: underline dashed 1px rgba(0,0,0,.1);
+  cursor: default;
+}
+.scrollCodeBlock {
   overflow: auto;
   font-size: 80%;
   hyphens: none;
@@ -159,13 +110,13 @@ code {
   border-radius: 0;
   position: relative;
 }
-.scrollCodeBlockComponent:hover .scrollCopyButton {
+.scrollCodeBlock:hover .scrollCopyButton {
   opacity: .5;
 }
-.scrollCodeBlockComponent:hover .scrollCopyButton:hover {
+.scrollCodeBlock:hover .scrollCopyButton:hover {
   opacity: .8;
 }
-.scrollCodeBlockComponent:hover .scrollCopyButton:active {
+.scrollCodeBlock:hover .scrollCopyButton:active {
   opacity: 1;
 }
 .scrollCopyButton {
@@ -179,10 +130,10 @@ code {
 .scrollCopyButton::after {
   content: "[ ]";
 }
-.scrollCopied::after {
+.scrollCopiedButton::after {
   content: "[✓]";
 }
-.scrollTableComponent {
+.scrollTable {
   table-layout: fixed;
   margin: .5em 0;
   overflow: hidden;
@@ -191,24 +142,50 @@ code {
   hyphens: none;
   border: 1px solid rgba(224,224,224,.8);
 }
-.scrollTableComponent td,.scrollTableComponent th {
+.scrollTable td,.scrollTable th {
   padding: 3px;
   overflow: hidden;
 }
-.scrollTableComponent th {
+.scrollTable th {
   border-bottom: 2px solid rgba(0,0,0,.6);
   text-align: left;
 }
-.scrollTableComponent tr:nth-child(even) {
+.scrollTable tr:nth-child(even) {
   background: rgba(224,224,224,.6);
 }
-.scrollAuthor {
+.scrollByLine {
   font-size: 12px;
   font-style: italic;
   margin: 4px 0;
   text-align: center;
 }
-.scrollKpiTable {
+.scrollViewSource {
+  text-align: center;
+  font-size: 80%;
+  margin: 0;
+  margin-top: 0.4em;
+  line-height: 1.4em;
+  margin-bottom: 1em;
+}
+.scrollViewSource a {
+  color: #000;
+}
+.scrollContinueReadingLink {
+  display: block;
+  text-align: center;
+}
+.scrollCaptionedFigure {
+  display: block;
+  text-align: center;
+}
+.scrollCaptionedFigure img {
+  max-width: 98%;
+  height: auto;
+}
+.scrollCaptionedFigure figcaption {
+  font-style: italic;
+}
+.scrollDashboard {
   width: 100%;
   font-size: 30px;
   text-align: center;
@@ -217,77 +194,97 @@ code {
   margin-top: 8px;
   margin-bottom: 8px;
 }
-.scrollKpiTable td {
+.scrollDashboard td {
   width: 33.3%;
   border: 1px solid #e8e8e8;
 }
-.scrollKpiTable span {
+.scrollDashboard span {
   font-size: 20p;;
   display: block;
 }
-.scrollFileViewSourceUrlComponent {
-  text-align: center;
-  font-size: 80%;
-  margin: 0;
-  margin-top: 0.4em;
-  line-height: 1.4em;
-  margin-bottom: 1em;
-}
-.scrollFileViewSourceUrlComponent a {
-  color: #000;
-}
-.scrollContinueReadingLink {
-  display: block;
-  text-align: center;
-}
-.scrollDialogueComponent span {
+.scrollChat span {
   font-family: Verdana;
   margin-top: 5px;
   padding: 5px 20px;
   border-radius: 15px;
   display: inline-block;
 }
-.scrollDialogueComponentLeft {
+.scrollChatLeft {
   text-align: left;
 }
-.scrollDialogueComponentLeft span {
+.scrollChatLeft span {
   background: rgba(204,204,204, .5);
 }
-.scrollDialogueComponentRight {
+.scrollChatRight {
   text-align: right;
 }
-.scrollDialogueComponentRight span {
+.scrollChatRight span {
   color: white;
   background: rgb(0,132,255);
 }
-.scrollCaptionedComponent {
-  display: block;
-  text-align: center;
-}
-.scrollCaptionedComponent img {
-  max-width: 98%;
-  height: auto;
-}
-.scrollCaptionedComponent figcaption {
-  font-style: italic;
-}
-.scrollKeyboardNav {
-  display: none;
-}
-.scrollHoverNote {
-  text-decoration: underline dashed 1px rgba(0,0,0,.1);
-  cursor: default;
-}
-.youTubeHolder {
+.scrollYouTubeHolder {
   position: relative;
   width: 100%;
   height: 0;
   padding-bottom: 56.25%;
 }
-.youTubeEmbed {
+.scrollYouTubeEmbed {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+}
+.gazetteHeader svg {
+  width: 30px;
+  height: 30px;
+  fill: rgba(204,204,204,.8);
+}
+.gazetteHeader svg:hover {
+  fill: #333;
+}
+.gazetteHeader a {
+  color: rgba(204,204,204,.8);
+  position: absolute;
+  font-size: 30px;
+  line-height: 27px;
+  text-decoration: none;
+}
+.gazetteHeader a:hover {
+  color: #333;
+}
+.gazetteHeader .gazetteTopLeftBar {
+  text-align: left;
+  left: 25px;
+}
+.gazetteHeader .gazetteTopRightBar {
+  text-align: right;
+  right: 25px;
+}
+.gazetteHeader a.gazettePrevPageLink {
+  left: 3px;
+}
+.gazetteHeader a.gazetteNextPageLink {
+  right: 3px;
+}
+.gazetteFooter {
+  margin-top: 8px;
+  padding-top: 8px;
+  text-align: center;
+}
+.gazetteFooter svg {
+  width: 30px;
+  height: 30px;
+  fill: rgba(204,204,204, .5);
+  padding: 0 7px;
+}
+.gazetteFooter svg:hover {
+  fill: #333;
+}
+.gazetteScrollLink {
+  display: block;
+  font-family: Verdana;
+  font-weight: 100;
+  margin: .5em;
+  color: rgba(204,204,204,.5);
 }
