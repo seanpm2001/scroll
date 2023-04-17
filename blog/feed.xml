@@ -2,23 +2,23 @@
 <rss version="2.0">
 <channel>
  <title></title>
- <link>https://scroll.pub/public/blog/</link>
+ <link>https://scroll.pub/blog/</link>
  <description>Official blog for Scroll</description>
- <lastBuildDate>Thu, 13 Apr 2023 21:04:09 +0000</lastBuildDate>
+ <lastBuildDate>Mon, 17 Apr 2023 20:55:26 +0000</lastBuildDate>
  <language>en-us</language>
  <item>
   <title>Counterpoints: A new tool for thought in the Scroll Language</title>
-  <link>https://scroll.pub/public/blog/counterpoints.html</link>
+  <link>https://scroll.pub/blog/counterpoints.html</link>
   <pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate>
  </item>
  <item>
   <title>Introducing the Blink Tag</title>
-  <link>https://scroll.pub/public/blog/introducingBlink.html</link>
+  <link>https://scroll.pub/blog/introducingBlink.html</link>
   <pubDate>Sun, 02 Oct 2022 00:00:00 +0000</pubDate>
  </item>
  <item>
   <title>The Power of Indented Heredocs: Markdown, Textile, and BBCode in one file with no escaping</title>
-  <link>https://scroll.pub/public/blog/indented-heredocs.html</link>
+  <link>https://scroll.pub/blog/indented-heredocs.html</link>
   <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
  </item>
 </channel>
