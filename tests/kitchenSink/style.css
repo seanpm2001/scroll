@@ -79,6 +79,9 @@ code {
 .scrollSection {
   break-inside: avoid;
 }
+.scrollSection h2 {
+  text-align: center;
+}
 .scrollSection h3 {
   margin-top: 1em;
   text-align: center;
