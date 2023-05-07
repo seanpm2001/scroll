@@ -8,6 +8,47 @@ abstractThemeCssParser
  inScope tagsParser
  cruxFromId
  catchAllCellType stringCell
+ string scrollStyles
+  figure
+   margin 0
+   padding 0
+  .scrollCaptionedFigure
+   display block
+   text-align center
+   img
+    max-width 98%
+    height auto
+   figcaption
+    font-style italic
+  .scrollCodeBlock
+   overflow auto
+   font-size 80%
+   hyphens none
+   white-space pre
+   break-inside avoid
+   display block
+   margin .5em 0
+   padding .5em
+   border-radius 0
+   position relative
+  .scrollCodeBlock:hover
+   .scrollCopyButton
+    opacity .5
+   .scrollCopyButton:hover
+    opacity .8
+   .scrollCopyButton:active
+    opacity 1
+  .scrollCopyButton
+   position absolute
+   top 2px
+   right 2px
+   font-size 14px
+   cursor pointer
+   opacity 0
+  .scrollCopyButton::after
+   content "[ ]"
+  .scrollCopiedButton::after
+   content "[✓]"
  javascript
   get useTags() {
     return !(this.get("tags") === "false")
@@ -18,19 +59,7 @@ abstractThemeCssParser
   compileEmbeddedVersion() {
    return ""
   }
-abstractThemeHeaderParser
- cruxFromId
- description A theme header.
- extends abstractTopLevelSingleMetaParser
- javascript
-  compileEmbeddedVersion() {
-   return ""
-  }
-abstractThemeFooterParser
- cruxFromId
- description A theme footer.
- extends abstractTopLevelSingleMetaParser
- javascript
-  compileEmbeddedVersion() {
-   return ""
+  get scrollCss() {
+    const hakonParser = this.root.hakonParser
+    return new hakonParser(this.scrollStyles).compile()
   }

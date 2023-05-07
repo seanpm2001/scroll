@@ -1,4 +1,54 @@
-html,body,div,span,h1,h2,h3,h4,p,ol,ul,li,table,figure {
+figure {
+  margin: 0;
+  padding: 0;
+}
+.scrollCaptionedFigure {
+  display: block;
+  text-align: center;
+}
+.scrollCaptionedFigure img {
+  max-width: 98%;
+  height: auto;
+}
+.scrollCaptionedFigure figcaption {
+  font-style: italic;
+}
+.scrollCodeBlock {
+  overflow: auto;
+  font-size: 80%;
+  hyphens: none;
+  white-space: pre;
+  break-inside: avoid;
+  display: block;
+  margin: .5em 0;
+  padding: .5em;
+  border-radius: 0;
+  position: relative;
+}
+.scrollCodeBlock:hover .scrollCopyButton {
+  opacity: .5;
+}
+.scrollCodeBlock:hover .scrollCopyButton:hover {
+  opacity: .8;
+}
+.scrollCodeBlock:hover .scrollCopyButton:active {
+  opacity: 1;
+}
+.scrollCopyButton {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0;
+}
+.scrollCopyButton::after {
+  content: "[ ]";
+}
+.scrollCopiedButton::after {
+  content: "[✓]";
+}
+html,body,div,span,p,ol,ul,li,table,figure {
   margin: 0;
   padding: 0;
   border: 0;
@@ -65,11 +115,29 @@ code {
   break-inside: avoid;
   text-align: justify;
 }
-.scrollTitle {
+h1 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+h2 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+h3 {
+  font-size: 14px;
+  margin: 10px 0;
+}
+h4 {
+  margin: 10px 0;
+  font-size: 14px;
+}
+h1.scrollTitle {
   text-align: center;
   margin-bottom: .25em;
+  margin-top: 0;
+  font-size: 28px;
 }
-.scrollTitle a {
+h1.scrollTitle a {
   color: #000;
 }
 .scrollDateline {
@@ -79,15 +147,16 @@ code {
 .scrollSection {
   break-inside: avoid;
 }
+.scrollSection h1 {
+  text-align: center;
+}
 .scrollSection h2 {
   text-align: center;
 }
 .scrollSection h3 {
-  margin-top: 1em;
   text-align: center;
 }
 .scrollSection h4 {
-  margin-top: 1em;
   text-align: center;
 }
 h4.scrollQuestion {
@@ -101,40 +170,7 @@ h4.scrollQuestion {
   cursor: default;
 }
 .scrollCodeBlock {
-  overflow: auto;
-  font-size: 80%;
-  hyphens: none;
-  white-space: pre;
   border-left: .5em solid rgba(204,204,204,.8);
-  break-inside: avoid;
-  display: block;
-  margin: .5em 0;
-  padding: .5em;
-  border-radius: 0;
-  position: relative;
-}
-.scrollCodeBlock:hover .scrollCopyButton {
-  opacity: .5;
-}
-.scrollCodeBlock:hover .scrollCopyButton:hover {
-  opacity: .8;
-}
-.scrollCodeBlock:hover .scrollCopyButton:active {
-  opacity: 1;
-}
-.scrollCopyButton {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  font-size: 14px;
-  cursor: pointer;
-  opacity: 0;
-}
-.scrollCopyButton::after {
-  content: "[ ]";
-}
-.scrollCopiedButton::after {
-  content: "[✓]";
 }
 .scrollTable {
   table-layout: fixed;
@@ -177,17 +213,6 @@ h4.scrollQuestion {
   display: block;
   text-align: center;
 }
-.scrollCaptionedFigure {
-  display: block;
-  text-align: center;
-}
-.scrollCaptionedFigure img {
-  max-width: 98%;
-  height: auto;
-}
-.scrollCaptionedFigure figcaption {
-  font-style: italic;
-}
 .scrollDashboard {
   width: 100%;
   font-size: 30px;
@@ -212,14 +237,8 @@ h4.scrollQuestion {
   border-radius: 15px;
   display: inline-block;
 }
-.scrollChatLeft {
-  text-align: left;
-}
 .scrollChatLeft span {
   background: rgba(204,204,204, .5);
-}
-.scrollChatRight {
-  text-align: right;
 }
 .scrollChatRight span {
   color: white;
@@ -237,57 +256,4 @@ h4.scrollQuestion {
   left: 0;
   width: 100%;
   height: 100%;
-}
-.gazetteHeader svg {
-  width: 30px;
-  height: 30px;
-  fill: rgba(204,204,204,.8);
-}
-.gazetteHeader svg:hover {
-  fill: #333;
-}
-.gazetteHeader a {
-  color: rgba(204,204,204,.8);
-  position: absolute;
-  font-size: 30px;
-  line-height: 27px;
-  text-decoration: none;
-}
-.gazetteHeader a:hover {
-  color: #333;
-}
-.gazetteHeader .gazetteTopLeftBar {
-  text-align: left;
-  left: 25px;
-}
-.gazetteHeader .gazetteTopRightBar {
-  text-align: right;
-  right: 25px;
-}
-.gazetteHeader a.gazettePrevPageLink {
-  left: 3px;
-}
-.gazetteHeader a.gazetteNextPageLink {
-  right: 3px;
-}
-.gazetteFooter {
-  margin-top: 8px;
-  padding-top: 8px;
-  text-align: center;
-}
-.gazetteFooter svg {
-  width: 30px;
-  height: 30px;
-  fill: rgba(204,204,204, .5);
-  padding: 0 7px;
-}
-.gazetteFooter svg:hover {
-  fill: #333;
-}
-.gazetteScrollLink {
-  display: block;
-  font-family: Verdana;
-  font-weight: 100;
-  margin: .5em;
-  color: rgba(204,204,204,.5);
 }
