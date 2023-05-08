@@ -330,12 +330,12 @@ document.addEventListener("DOMContentLoaded", () => document.querySelectorAll(".
 <ul style="text-indent:0px;"><li >🎉 added <code>program</code> keyword for Program Links. See <a href="blog/programLinks.html">blog post</a> for details.</li></ul>
 </div></div>
 <div class="scrollSection"><div class="scrollSection"><h1 class="scrollParagraph">71.2.0 5/07/2023</h1>
-<ul style="text-indent:0px;"><li >🏥 add <code><!DOCTYPE html></code> to improve performance on Google Lighthouse.</li>
+<ul style="text-indent:0px;"><li >🏥 add <code>&lt;!DOCTYPE html&gt;</code> to improve performance on Google Lighthouse.</li>
 <li >🏥 fix regression of meta description generation and add test</li>
 <li >🏥 upgrade JTree to get colorized test output</li></ul>
 </div></div>
 <div class="scrollSection"><div class="scrollSection"><h1 class="scrollParagraph">71.1.0 5/07/2023</h1>
-<ul style="text-indent:0px;"><li >🏥 add <code><html lang></html></code> back as you need that to get proper hyphenation. Added test.</li>
+<ul style="text-indent:0px;"><li >🏥 add <code>&lt;html lang&gt;&lt;/html&gt;</code> back as you need that to get proper hyphenation. Added test.</li>
 <li >🎉 added <code>htmlLang</code> keyword for overriding the default lang which is set to "en"</li>
 <li >🎉 added <code>text-align: justify;</code> on paragraphs to Gazette and Tufte themes.</li></ul>
 </div></div>
@@ -348,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => document.querySelectorAll(".
 <div class="scrollSection"><div class="scrollSection"><h1 class="scrollParagraph">70.0.0 4/29/2023</h1>
 <ul style="text-indent:0px;"><li >🎉 Paragraphs no longer need to start with '* '. All non-blank lines that don't start with a defined keyword are now treated as a paragraph. The catch-all is no longer an error. It is recommended to start all paragraphs with a capital letter, as in the future it may become the standard that keywords start with a lowercase or symbol, and you will avoid any future keyword collisions.</li><ul style="text-indent:20px;"><li >Thanks to zoeartemis for the feedback.</li>
 <li >No changes are needed but you can update your files with the find/replace combo: <code>\n\* </code> <code>\n</code>.</li><ul style="text-indent:40px;"><li >You may want to use the case sensitive <code>\n\* [a-z]</code> search first to find any paragraphs that start with a lowercase letter.</li>
-<li >You also want to be careful of any lines that would now start with <code><</code>, as they will be parsed as HTML nodes.</li></ul></ul></ul>
+<li >You also want to be careful of any lines that would now start with <code>&lt;!</code>, as they will be parsed as HTML nodes.</li></ul></ul></ul>
 </div></div>
 <div class="scrollSection"><div class="scrollSection"><h1 class="scrollParagraph">69.3.0 4/26/2023</h1>
 <ul style="text-indent:0px;"><li >🎉 Add <code>katex</code> keyword. <a href="https://katex.org/">KaTeX</a>: "The fastest math typesetting library for the web."</li></ul>
