@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html lang="en"><?xml version="1.0" encoding="ISO-8859-1" ?>
 <rss version="2.0">
 <channel>
  <title></title>
  <link>https://scroll.pub/tests/kitchenSink/</link>
  <description>Kitchen sink test site.</description>
- <lastBuildDate>Sun, 07 May 2023 19:58:19 +0000</lastBuildDate>
+ <lastBuildDate>Mon, 08 May 2023 02:15:21 +0000</lastBuildDate>
  <language>en-us</language>
  <item>
   <title>Top Sinks</title>
@@ -17,4 +17,4 @@
   <pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate>
  </item>
 </channel>
-</rss>
+</rss></html>
